@@ -524,7 +524,7 @@ export default {
               value: 80
             },
             {
-              name: 'Arduino / Rasberry Pi',
+              name: 'Arduino / Raspberry Pi',
               value: 80
             }
           ]
