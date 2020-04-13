@@ -15,9 +15,9 @@
       <br>
       His Favorite quotes are :
       <br>
-      <i class="text-white text-left">Talent without tenacity is like a seed without water.</i><br>
-      <i class="text-white text-left">You are always one decision away from a completely different life.</i><br>
-      <i class="text-white text-left">You Must Learn from the Mistakes of Others. You Will Never Live Long Enough to Make Them All Yourself</i>
+      <i class="text-white text-left">&#9673; Talent without tenacity is like a seed without water.</i><br>
+      <i class="text-white text-left">&#9673; You are always one decision away from a completely different life.</i><br>
+      <i class="text-white text-left">&#9673; You Must Learn from the Mistakes of Others. You Will Never Live Long Enough to Make Them All Yourself</i>
     </div>
   </q-page>
 </template>

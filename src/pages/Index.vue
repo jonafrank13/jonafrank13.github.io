@@ -3,7 +3,7 @@
     <div class="img-box col-12"></div>
     <h6 class="text-secondary col-12 text-bold text-center q-mb-none">Howdy from</h6>
     <h4 class="text-accent col-12 text-center text-bold q-mb-none q-mt-none">___ Jona Frank ___</h4>
-    <h5 class="text-secondary col-12 text-bold text-center q-my-sm">I am a
+    <h6 class="text-secondary col-12 text-bold text-center q-my-sm">I am a
       <vue-typer
         :text='roles'
         :repeat='Infinity'
@@ -17,7 +17,7 @@
         :erase-on-complete='false'
         caret-animation='smooth'
       ></vue-typer>
-    </h5>
+    </h6>
     <footer-link />
   </q-page>
 </template>
