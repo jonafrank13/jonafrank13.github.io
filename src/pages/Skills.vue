@@ -40,59 +40,59 @@ export default {
           skills: [
             {
               name: 'Team Management',
-              value: 100
+              value: 90
             },
             {
               name: 'Hiring Process Management',
-              value: 100
+              value: 90
             },
             {
               name: 'Client Interaction / Requirement Gathering',
-              value: 100
+              value: 90
             },
             {
               name: 'Solution Architecture',
-              value: 90
+              value: 85
             },
             {
               name: 'Product Management',
-              value: 90
+              value: 80
             },
             {
               name: 'Code Reviews',
-              value: 100
-            },
-            {
-              name: 'Continuous Feedback / Team Motivation',
-              value: 100
-            },
-            {
-              name: 'Budget Management',
-              value: 80
-            },
-            {
-              name: 'Project Proposals',
-              value: 80
-            },
-            {
-              name: 'Documentation / Content Writing',
-              value: 100
-            },
-            {
-              name: 'Process Improvement',
-              value: 100
-            },
-            {
-              name: 'SCRUM Process Management',
               value: 90
             },
             {
+              name: 'Continuous Feedback / Team Motivation',
+              value: 90
+            },
+            {
+              name: 'Budget Management',
+              value: 70
+            },
+            {
+              name: 'Project Proposals',
+              value: 90
+            },
+            {
+              name: 'Documentation / Content Writing',
+              value: 85
+            },
+            {
+              name: 'Process Improvement',
+              value: 90
+            },
+            {
+              name: 'SCRUM Process Management',
+              value: 70
+            },
+            {
               name: 'Problem Solving / Debugging',
-              value: 100
+              value: 90
             },
             {
               name: 'Interpersonal Skills',
-              value: 100
+              value: 90
             }
           ]
         },
@@ -101,19 +101,19 @@ export default {
           skills: [
             {
               name: 'Javascript',
-              value: 100
+              value: 90
             },
             {
               name: 'Node.js',
-              value: 100
+              value: 90
             },
             {
               name: 'HTML',
-              value: 100
+              value: 90
             },
             {
               name: 'CSS',
-              value: 100
+              value: 90
             },
             {
               name: 'Java',
@@ -129,7 +129,7 @@ export default {
             },
             {
               name: 'Ruby',
-              value: 10
+              value: 5
             },
             {
               name: 'Go',
@@ -137,7 +137,7 @@ export default {
             },
             {
               name: 'C#',
-              value: 5
+              value: 10
             }
           ]
         },
@@ -146,31 +146,31 @@ export default {
           skills: [
             {
               name: 'Microservices',
-              value: 100
+              value: 90
             },
             {
               name: 'Service Oriented Architecture (SOA)',
-              value: 100
+              value: 90
             },
             {
               name: 'Monolitic Architecture',
-              value: 100
+              value: 90
             },
             {
               name: '3-Tier Architecture',
-              value: 100
+              value: 90
             },
             {
               name: 'N-Tier Architecture',
-              value: 100
+              value: 90
             },
             {
               name: 'Cloud Architectures',
-              value: 95
+              value: 70
             },
             {
               name: 'Amazon Web Services (AWS)',
-              value: 90
+              value: 80
             },
             {
               name: 'Google Cloud Services (GCP)',
@@ -183,7 +183,7 @@ export default {
           skills: [
             {
               name: 'Vue',
-              value: 100
+              value: 90
             },
             {
               name: 'Angular 2+',
@@ -199,7 +199,7 @@ export default {
             },
             {
               name: 'jQuery',
-              value: 100
+              value: 90
             }
           ]
         },
@@ -208,7 +208,7 @@ export default {
           skills: [
             {
               name: 'Quasar',
-              value: 100
+              value: 90
             },
             {
               name: 'Ionic 2',
@@ -216,7 +216,7 @@ export default {
             },
             {
               name: 'Ionic 3',
-              value: 80
+              value: 90
             }
           ]
         },
@@ -229,7 +229,7 @@ export default {
             },
             {
               name: 'Webpack',
-              value: 100
+              value: 90
             },
             {
               name: 'Grunt',
@@ -242,7 +242,7 @@ export default {
           skills: [
             {
               name: 'SCSS',
-              value: 100
+              value: 90
             },
             {
               name: 'LESS',
@@ -250,7 +250,7 @@ export default {
             },
             {
               name: 'Stylus',
-              value: 100
+              value: 90
             }
           ]
         },
@@ -267,11 +267,11 @@ export default {
             },
             {
               name: 'Cypress',
-              value: 95
+              value: 90
             },
             {
               name: 'Puppeteer',
-              value: 100
+              value: 90
             }
           ]
         },
@@ -280,7 +280,7 @@ export default {
           skills: [
             {
               name: 'Typescript',
-              value: 95
+              value: 90
             },
             {
               name: 'D3',
@@ -296,39 +296,39 @@ export default {
             },
             {
               name: 'ES6',
-              value: 100
+              value: 90
             },
             {
               name: 'npm',
-              value: 100
+              value: 90
             },
             {
               name: 'Yarn',
-              value: 80
+              value: 90
             },
             {
               name: 'Bootstrap',
-              value: 100
+              value: 90
             },
             {
               name: 'CORS',
-              value: 100
+              value: 90
             },
             {
               name: 'CSRF',
-              value: 80
+              value: 90
             },
             {
               name: 'Progressive Web Apps (PWA)',
-              value: 100
+              value: 90
             },
             {
               name: 'Single Page Apps (SPA)',
-              value: 100
+              value: 90
             },
             {
               name: 'Server Side Rendering (SSR)',
-              value: 100
+              value: 90
             },
             {
               name: 'Flux',
@@ -344,19 +344,19 @@ export default {
             },
             {
               name: 'Search Engine Optimization (SEO)',
-              value: 100
+              value: 90
             },
             {
               name: 'Chrome Extensions',
-              value: 80
+              value: 90
             },
             {
               name: 'Content Delivery Networks (CDNs)',
-              value: 80
+              value: 90
             },
             {
               name: 'Babel',
-              value: 100
+              value: 90
             },
             {
               name: 'GraphQL',
@@ -369,11 +369,11 @@ export default {
           skills: [
             {
               name: 'Express',
-              value: 100
+              value: 80
             },
             {
               name: 'Fastify',
-              value: 100
+              value: 90
             },
             {
               name: 'Helmet',
@@ -390,7 +390,7 @@ export default {
           skills: [
             {
               name: 'Postgres (PgSQL)',
-              value: 100
+              value: 90
             },
             {
               name: 'MySQL',
@@ -424,7 +424,7 @@ export default {
           skills: [
             {
               name: 'VS Code',
-              value: 100
+              value: 90
             },
             {
               name: 'Atom',
@@ -432,19 +432,19 @@ export default {
             },
             {
               name: 'Sublime',
-              value: 80
+              value: 90
             },
             {
               name: 'Github',
-              value: 100
+              value: 90
             },
             {
               name: 'SVN',
-              value: 80
+              value: 90
             },
             {
               name: 'Docker',
-              value: 80
+              value: 90
             },
             {
               name: 'Kubernetes',
@@ -456,11 +456,11 @@ export default {
             },
             {
               name: 'Windows OS',
-              value: 100
+              value: 90
             },
             {
               name: 'Mac OS',
-              value: 100
+              value: 90
             },
             {
               name: 'Linux',
@@ -473,7 +473,7 @@ export default {
           skills: [
             {
               name: 'OAuth',
-              value: 95
+              value: 90
             },
             {
               name: 'Kafka',
@@ -501,15 +501,15 @@ export default {
             },
             {
               name: 'UX / UI',
-              value: 80
+              value: 90
             },
             {
               name: 'Algorithms',
-              value: 95
+              value: 90
             },
             {
               name: 'Datastructures',
-              value: 95
+              value: 90
             },
             {
               name: 'Design Patterns',
@@ -525,11 +525,11 @@ export default {
             },
             {
               name: 'Microsoft Office (Excel, PPT, Word)',
-              value: 80
+              value: 90
             },
             {
               name: 'Arduino / Raspberry Pi',
-              value: 80
+              value: 90
             }
           ]
         },
@@ -538,7 +538,7 @@ export default {
           skills: [
             {
               name: 'Cooking / Baking',
-              value: 100
+              value: 90
             },
             {
               name: 'Painting / Sketching',
@@ -546,7 +546,7 @@ export default {
             },
             {
               name: 'Singing',
-              value: 80
+              value: 70
             },
             {
               name: 'Oratory',
@@ -554,7 +554,7 @@ export default {
             },
             {
               name: 'Quizzing',
-              value: 75
+              value: 80
             }
           ]
         }
