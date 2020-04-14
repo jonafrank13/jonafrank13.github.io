@@ -279,6 +279,10 @@ export default {
           name: 'Other Frontend Technologies',
           skills: [
             {
+              name: 'Typescript',
+              value: 95
+            },
+            {
               name: 'D3',
               value: 50
             },
@@ -347,7 +351,7 @@ export default {
               value: 80
             },
             {
-              name: 'Content Delivery Networs (CDNs)',
+              name: 'Content Delivery Networks (CDNs)',
               value: 80
             },
             {
