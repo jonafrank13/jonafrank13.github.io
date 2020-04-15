@@ -35,7 +35,7 @@
               <li>Exposure to various project management & development models – Waterfall, Feature Driven Development, Agile, XP</li>
               <li>Experience in setting up high velocity runway for applications with continuous delivery model & SOPs</li>
               <li>Hands on experience in developing Cloud Native Architectures, n-tier web applications, batch systems, Micro Services, Message/ Event driven systems, IAM, OAUTH 2.0 solutions etc</li>
-              <li>Helped in hiring & interview process, team co-ordination, managment etc</li>
+              <li>Laid the foundation for evaluation strategies for company wide hiring, team co-ordination, managment etc</li>
             </ul>
           </q-card-section>
         </q-card>

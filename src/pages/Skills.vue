@@ -7,11 +7,16 @@
         </q-avatar>
       </template>
     </q-input>
+    <div class="q-mt-md full-width flex justify-center">
+      <div class="text-warning" style="padding-top:14.5px">Graph</div>
+      <q-toggle class="text-warning" dark color="accent" size="lg" label="List" v-model="is_list" />
+    </div>
     <div v-for="segment in filtered_skills"  :key="segment.name">
       <h5 v-if="segment.skills.length > 0" class="full-width q-my-lg q-mt-xl text-center text-white text-bold">{{segment.name}}</h5>
-      <div v-if="segment.skills.length > 0" class="flex flex-wrap justify-center">
-        <div v-for="skill in segment.skills" class="column flex-wrap justify-start items-center" :key="skill.name">
+      <div v-if="segment.skills.length > 0" class="flex flex-wrap justify-center" :class="is_list ? 'column items-center' : ''">
+        <div v-for="skill in segment.skills" class="flex-wrap justify-start items-center" :class="is_list ? 'justify-center q-my-sm' : 'column'" :key="skill.name">
           <q-circular-progress
+            v-if="!is_list"
             show-value
             font-size="10px"
             class="q-ma-md text-accent row"
@@ -124,20 +129,12 @@ export default {
               value: 75
             },
             {
-              name: 'Groovy',
+              name: 'Go',
               value: 20
             },
             {
-              name: 'Ruby',
-              value: 5
-            },
-            {
-              name: 'Go',
-              value: 10
-            },
-            {
               name: 'C#',
-              value: 10
+              value: 20
             }
           ]
         },
@@ -559,7 +556,8 @@ export default {
           ]
         }
       ],
-      search: null
+      search: null,
+      is_list: false
     }
   },
   computed: {

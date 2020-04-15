@@ -9,12 +9,13 @@
         <q-item-section>
           <q-item-label class="text-accent text-h4">Anna University</q-item-label>
           <q-item-label class="text-secondary text-h6">Bachelor of Engineering in Electrical and Electronics Engineering (B.E EEE)</q-item-label>
-          <q-item-label class="text-white" caption>Head of Robotics, Math, English and Quiz Club</q-item-label>
-          <q-item-label class="text-white" caption>Merit Scholarship winner</q-item-label>
+          <q-item-label class="text-white" caption>St. Joseph's college of engineering</q-item-label>
+          <q-item-label class="text-white" caption>Head of Robotics, Math, English and Quiz Club. Merit Scholarship winner</q-item-label>
         </q-item-section>
         <q-item-section side top>
           <q-item-label class="text-accent" caption>2009 - 2013</q-item-label>
           <q-item-label class="text-warning" caption>8.49/10 GPA</q-item-label>
+          <q-item-label class="text-white" caption>Chennai</q-item-label>
         </q-item-section>
       </q-item>
       <q-separator dark spaced inset />
@@ -31,6 +32,7 @@
         <q-item-section side top>
           <q-item-label class="text-accent" caption>1995 - 2009</q-item-label>
           <q-item-label class="text-warning" caption>93.4%</q-item-label>
+          <q-item-label class="text-white" caption>Chennai</q-item-label>
         </q-item-section>
       </q-item>
       <q-item-label header class="text-h3 text-warning text-center q-my-lg">Certifications</q-item-label>

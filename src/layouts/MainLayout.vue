@@ -2,8 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-drawer
       v-model="leftDrawerOpen"
-      show-if-above
-      :width="240"
+      :width="280"
       :breakpoint="500"
       content-class="bg-primary flex justify-between"
     >
