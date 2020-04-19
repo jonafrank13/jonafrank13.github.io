@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex justify-around content-start skills-pg q-pa-sm">
-    <q-input dark outlined clearable v-model="search" debounce="500" placeholder="Search Skill" class="full-width q-mt-xl q-px-xl">
+    <q-input :dark="$q.dark.isActive" outlined clearable v-model="search" debounce="500" placeholder="Search Skill" class="full-width q-mt-xl q-px-xl">
       <template v-slot:append>
         <q-avatar>
           <q-icon name="search" />
@@ -9,10 +9,10 @@
     </q-input>
     <div class="q-mt-md full-width flex justify-center">
       <div class="text-warning" style="padding-top:14.5px">Graph</div>
-      <q-toggle class="text-warning" dark color="accent" size="lg" label="List" v-model="is_list" />
+      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="accent" size="lg" label="List" v-model="is_list" />
     </div>
     <div v-for="segment in filtered_skills"  :key="segment.name">
-      <h5 v-if="segment.skills.length > 0" class="full-width q-my-lg q-mt-xl text-center text-white text-bold">{{segment.name}}</h5>
+      <h5 v-if="segment.skills.length > 0" class="full-width q-my-lg q-mt-xl text-center text-bold">{{segment.name}}</h5>
       <div v-if="segment.skills.length > 0" class="flex flex-wrap justify-center" :class="is_list ? 'column items-center' : ''">
         <div v-for="skill in segment.skills" class="flex-wrap justify-start items-center" :class="is_list ? 'justify-center q-my-sm' : 'column'" :key="skill.name">
           <q-circular-progress
@@ -24,7 +24,7 @@
             size="80px"
             :thickness="0.25"
             color="secondary"
-            track-color="primary"
+            :track-color="$q.dark.isActive ? 'primary' : 'white'"
           >
           </q-circular-progress>
           <div class="text-bold text-warning text-center" style="max-width: 110px; text-wrap: wrap;">{{skill.name}}</div>
@@ -580,9 +580,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.skills-pg {
-  background: $background;
-}
 h5 {
   color: $accent !important;
   text-decoration: underline;

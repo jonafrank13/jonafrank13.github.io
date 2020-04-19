@@ -1,9 +1,9 @@
 <template>
   <q-page class="flex projects-page">
-    <div class="q-pa-xl row items-start justify-sm-center justify-between q-gutter-md">
-      <q-card class="project-card" v-for="project in projects" :key="project.name" flat bordered>
+    <div class="q-pa-xl row items-start justify-md-between justify-center q-gutter-md">
+      <q-card class="project-card" :class="$q.dark.isActive ? 'bg-primary' : ''" :dark="false" v-for="project in projects" :key="project.name" flat bordered>
         <q-img
-          width="300px"
+          width="298px"
           height="160px"
           :src="project.img"
         />
@@ -13,7 +13,7 @@
           <div class="text-caption text-grey">{{project.desc}}</div>
         </q-card-section>
         <q-card-actions class="absolute-bottom">
-          <q-btn flat color="white" type="a" :href="project.link" target="_blank" icon="link" label="View Project" />
+          <q-btn flat :color="$q.dark.isActive ? 'white' : 'black'" type="a" :href="project.link" target="_blank" icon="link" label="View Project" />
         </q-card-actions>
       </q-card>
     </div>
@@ -88,13 +88,9 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.projects-page {
-  background: $background;
-}
 .project-card {
   min-height: 400px;
   max-width: 300px;
-  background: $primary;
   position: relative;
 }
 </style>

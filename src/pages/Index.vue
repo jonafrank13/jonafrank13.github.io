@@ -41,7 +41,6 @@ export default {
 <style lang="scss" scoped>
 .front-page {
   position: relative;
-  background: $background;
 }
 .img-box {
   height: 200px;

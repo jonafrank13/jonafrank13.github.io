@@ -16,7 +16,7 @@
 
     <q-item-section>
       <q-item-label class="text-accent text-bold">{{ title }}</q-item-label>
-      <q-item-label class="text-white" caption>
+      <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>
         {{ caption }}
       </q-item-label>
     </q-item-section>

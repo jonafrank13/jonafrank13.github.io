@@ -21,8 +21,3 @@ export default {
   }
 }
 </script>
-<style lang="scss" scoped>
-.contact-page {
-  background: $background;
-}
-</style>

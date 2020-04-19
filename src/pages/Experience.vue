@@ -1,10 +1,10 @@
 <template>
   <q-page class="flex exp-page q-py-md q-px-xl">
-    <q-list dark class="full-width q-mt-xl">
-      <q-expansion-item header-class="bg-primary list-item">
+    <q-list :dark="$q.dark.isActive" class="full-width q-mt-xl">
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
         <template v-slot:header>
           <q-item-section avatar>
-            <q-avatar icon="img:statics/icons/brimma.png" size="100px" color="primary" text-color="white" />
+            <q-avatar icon="img:statics/icons/brimma.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">Brimma Tech Inc.</q-item-label>
@@ -12,9 +12,9 @@
             <q-item-label caption class="text-bold">January 2017 to Present (3+ years)</q-item-label>
           </q-item-section>
         </template>
-        <q-separator dark />
+        <q-separator :dark="$q.dark.isActive" />
         <q-card>
-          <q-card-section class="bg-primary">
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
             <ul>
               <li>Engineering and Development Partner in a fast paced fully AGILE STARTUP team following the SCRUM guidelines</li>
               <li>Developed and implemented the official website for the company</li>
@@ -40,11 +40,11 @@
           </q-card-section>
         </q-card>
       </q-expansion-item>
-      <q-separator spaced dark />
-      <q-expansion-item header-class="bg-primary list-item">
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
         <template v-slot:header>
           <q-item-section avatar>
-            <q-avatar icon="img:statics/icons/zoho.png" size="100px" color="primary" text-color="white" />
+            <q-avatar icon="img:statics/icons/zoho.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">Zoho Corp</q-item-label>
@@ -54,7 +54,7 @@
         </template>
         <q-separator dark />
         <q-card>
-          <q-card-section class="bg-primary">
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
             <ul>
               <li>Part of SERVICE DESK PLUS – MANAGE ENGINE, One of the widely used Helpdesk Enterprise Softwares in the world</li>
               <li>Involved in the complete SDLC (Full Stack) of specific modules in the product, from DB modeling to the UI & UX for the modules</li>
@@ -85,9 +85,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.exp-page {
-  background: $background;
-}
 ul {
   margin: 0;
   padding-left: 15px;
