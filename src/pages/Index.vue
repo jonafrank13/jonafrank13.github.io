@@ -29,7 +29,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
-      roles: ['Polyglot Full-Stack Web Developer', 'Javascript Geek', 'Technical Solution Architect', 'Product Manager', 'Perpetual Philomath']
+      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Solution Architect', 'Aspiring Product Manager', 'Perpetual Philomath']
     }
   },
   components: {

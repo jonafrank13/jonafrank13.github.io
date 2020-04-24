@@ -8,34 +8,33 @@
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">Brimma Tech Inc.</q-item-label>
-            <q-item-label class="text-bold text-accent text-h6">Engineering Partner</q-item-label>
-            <q-item-label caption class="text-bold">January 2017 to Present (3+ years)</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Engineering Partner ( Technical Lead , Technical Solution Architect and Product Manager )</q-item-label>
+            <q-item-label caption class="text-bold">January 2017 to April 2020 (3 years 4 months)</q-item-label>
           </q-item-section>
         </template>
         <q-separator :dark="$q.dark.isActive" />
         <q-card>
           <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
             <ul>
-              <li>Engineering and Development Partner in a fast paced fully AGILE STARTUP team following the SCRUM guidelines</li>
-              <li>Developed and implemented the official website for the company</li>
-              <li>Architected, Developed and released a mini CRM app in record 20 days with our team for a client</li>
-              <li>Worked on multiple backends such as java, node & C# for various products</li>
-              <li>Architected and Solutioned highly available, resilient, fault tolerant applications with architectural components such as load balancers, caches (Redis), CDNs (Cloudflare), Queues (SQS, Kafka, Rabbit MQ), Databases and Services</li>
-              <li>Developed web, hybrid and mobile applications for multiple clients</li>
-              <li>Helped in Architecting, Developing and Maintaining the applications developed</li>
-              <li>Created fully responsive and adaptive mobile hybrid, Progressive Web Applications (PWAs) and web based applications</li>
-              <li>Deployed and hosted fully compliant servers for various microservices with node.js, express, fastify frameworks</li>
-              <li>Worked on creating applications and poc(s) using Vue, Angular, React, Ionic & Quasar frameworks in the front end and node, express/fastify servers for the microservices</li>
-              <li>Worked on frontend performance improvement using webpack</li>
-              <li>Worked to improve Search Engine Optimization (SEO)</li>
-              <li>Involved in product management (Requirement Gathering, Architecting solution and flow, Creating the scaffolding, Project Structuring, Tool chain setup, GIT process setup, listed out the feature sets, KPIs, UX improvements and UI refinements)</li>
-              <li>Deployed applications to the Amazon Web Services Server Instances (AWS – Elastic Cloud Compute - EC2)</li>
-              <li>Worked with AWS VPC, Lambda, Route 53, SQS</li>
-              <li>Followed and implemented TDD and BDD principles</li>
-              <li>Exposure to various project management & development models – Waterfall, Feature Driven Development, Agile, XP</li>
-              <li>Experience in setting up high velocity runway for applications with continuous delivery model & SOPs</li>
-              <li>Hands on experience in developing Cloud Native Architectures, n-tier web applications, batch systems, Micro Services, Message/ Event driven systems, IAM, OAUTH 2.0 solutions etc</li>
-              <li>Laid the foundation for evaluation strategies for company wide hiring, team co-ordination, managment etc</li>
+              <li>Worked predominantly as a Technical lead in a US based fin-tech domain mortgage software products startup, wore multiple hats including Technical solution architect and Product Management</li>
+              <li>Was the SME for frontend , web development, CSS, jank free 60fps content rendering and javascript coding.</li>
+              <li>Architected and solutioned multiple end-end products that are highly resilient and fault tolerant</li>
+              <li>Designed and Developed REST and SOAP API for product backends, developed and deployed multiple micro services using node (Fastify and Express frameworks) and java (spring boot), handled service communication and sync using messaging services such as SQS and Rabbit MQ.</li>
+              <li>Developed and hands on coded applications solving complex problems such as Financial Services, CRM , Appointment Management Systems , Orchestrated task scheduling and execution etc.</li>
+              <li>Handled clients directly for requirement gathering and sprint demos, <b>reported directly to the CEO</b> for most products</li>
+              <li>Worked with multiple backend cloud and native technologies (AWS EC2, Lambda, SQS, Load balancers, VPC, Spring Boot, Spring Reactive, Jenkins, Docker) and languages (node, java and C#) for various products</li>
+              <li>Designed the Database schemas for products in both non-relational (MongoDB, Firebase) and relational databases (postgres)</li>
+              <li>Wrote code extensively in the frontend side, developing multiple fully responsive and adaptive Web applications, Progressive Web Apps (PWAs) & Single Page web Apps (SPAs) implemented concepts such as Server Side Rendering (SSRs), Search Engine Optimization (SEOs), treeshaking, gzip compression, Content Delivery Networks (CDNs), TDD etc, ES6 syntax, NPM, Webpack, CSS preprocessors ( SASS & LESS ), Angular (2, 4, 6) , Vue (3.0) , Ionic & Quasar frameworks.</li>
+              <li>Released couple of hybrid apps using Apache Cordova in Android Play Store and Apple App stores.</li>
+              <li>Created POCs in React for benchmarking and evaluation of frameworks.</li>
+              <li>Developed the official website for the company.</li>
+              <li>Participated and led efforts in all R&D work for evaluating the best and the most cutting-edge technologies available.</li>
+              <li>Handled application security in both frontend (CORS, CSRF, OAuth 2.0, XSS prevention, eval code blocking, CSP, package  audits) and the backend (VPC, SQL Injection, Multi-factor Authentication, JWT, etc)</li>
+              <li>Involved in product management activities as well since the company was a startup (Requirement Gathering, Architecting solution and flow, Creating the scaffolding, Project Structuring, Tool chain setup, GIT process setup, listed out the feature sets, KPIs, UX improvements and UI refinements)</li>
+              <li>Incorporated agile and xp based software development process to increase team velocity and thoroughput.</li>
+              <li>Formalized and implemented the CI, CD pipelines in the company</li>
+              <li>Coached, Provided technical guidance and motivated juniors in my team with best code practices, implementing design patterns, frequent code reviews, performance feedback</li>
+              <li>Streamlined the hiring process for the startup by creative candidate evaluation strategies and by conducting local hackathons</li>
             </ul>
           </q-card-section>
         </q-card>
@@ -48,7 +47,7 @@
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">Zoho Corp</q-item-label>
-            <q-item-label class="text-bold text-accent text-h6">Member Technical Staff</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Member Technical Staff (Senior Software Developer & Module Architect)</q-item-label>
             <q-item-label caption class="text-bold">June 2013 to December 2016 (3 years 7 months)</q-item-label>
           </q-item-section>
         </template>
