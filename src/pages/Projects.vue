@@ -41,10 +41,17 @@ export default {
           img: '/statics/corona.png'
         },
         {
+          name: 'Wordpress Blog Viewer',
+          date: 'March 2020',
+          desc: 'Created a web app to view wordpress blogs using Wordpress APIs',
+          link: 'https://jonafrank13.github.io/blog/#/',
+          img: '/statics/blog.png'
+        },
+        {
           name: 'Simple Meeting Scheduler',
           date: 'Sep 2019',
           desc: 'Created a vue app to schedule meetings in the browser itself using localStorage, has some nifty features',
-          link: 'https://jonafrank13.github.io/meeting/#/',
+          link: 'https://jonafrank13.github.io/calendar/#/',
           img: '/statics/calendar.png'
         },
         {
