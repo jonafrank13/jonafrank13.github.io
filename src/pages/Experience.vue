@@ -4,6 +4,24 @@
       <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
         <template v-slot:header>
           <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/chargebee.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">Chargebee</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Principal Software Engineer</q-item-label>
+            <q-item-label caption class="text-bold">May 2020 to present</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
             <q-avatar icon="img:statics/icons/brimma.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
           </q-item-section>
           <q-item-section>
@@ -47,7 +65,7 @@
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">Zoho Corp</q-item-label>
-            <q-item-label class="text-bold text-accent text-h6">Member Technical Staff (Senior Software Developer & Module Architect)</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Member Technical Staff ( Senior Software Developer & Module Architect )</q-item-label>
             <q-item-label caption class="text-bold">June 2013 to December 2016 (3 years 7 months)</q-item-label>
           </q-item-section>
         </template>
