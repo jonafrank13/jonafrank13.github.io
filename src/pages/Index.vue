@@ -56,7 +56,7 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
-  background: url('/statics/jona.jpg') no-repeat;
+  background: url('/statics/JONA.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   transform: rotate(-45deg) scale(1.38) translate3d(8px, 5px, 0);
