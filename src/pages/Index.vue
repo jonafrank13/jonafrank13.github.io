@@ -29,7 +29,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
-      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Solution Architect', 'Aspiring Product Manager', 'Perpetual Philomath']
+      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Solution Architect', 'Technical Product Manager', 'Perpetual Philomath']
     }
   },
   components: {
@@ -56,9 +56,9 @@ export default {
   display: block;
   width: 100%;
   height: 100%;
-  background: url('/statics/jona.png') no-repeat;
+  background: url('/statics/jona.jpg') no-repeat;
   background-size: cover;
   background-position: center;
-  transform: rotate(-45deg) scale(1.5);
+  transform: rotate(-45deg) scale(1.38) translate3d(8px, 5px, 0);
 }
 </style>

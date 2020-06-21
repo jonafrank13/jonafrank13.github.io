@@ -15,6 +15,17 @@
         <q-separator :dark="$q.dark.isActive" />
         <q-card>
           <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li>Working with a leading subscription software service provider (SAAS)</li>
+              <li>Working as a Principal developer/architect in the checkout services team</li>
+              <li>Involved with product architecture in middleware and frontend</li>
+              <li>Tasked with creating a Design Language System for the product by developing reusable web components</li>
+              <li>Pushed code to production right from the first day, fixing bugs and shipping new features with minimal turnaround time</li>
+              <li>Leading the frontend efforts of the entire company with multiple internal team dependencies</li>
+              <li>Working with reactive programming systems using Vertex (java flavour)</li>
+              <li>Developed frontend code, components with Typescript and Vue</li>
+              <li>Involved with the recruiting process for interviewing and screening potential candidates</li>
+            </ul>
           </q-card-section>
         </q-card>
       </q-expansion-item>
@@ -34,11 +45,13 @@
         <q-card>
           <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
             <ul>
+              <li>Worked as a partner to the company in the engineering domain, worked in all aspects of product design, development, shipping and maintenance from scratch and end to end</li>
               <li>Worked predominantly as a Technical lead in a US based fin-tech domain mortgage software products startup, wore multiple hats including Technical solution architect and Product Management</li>
-              <li>Was the SME for frontend , web development, CSS, jank free 60fps content rendering and javascript coding.</li>
+              <li>Was the SME for frontend , web development, CSS, jank free 60fps content rendering and javascript coding</li>
               <li>Architected and solutioned multiple end-end products that are highly resilient and fault tolerant</li>
+              <li>Shipped multiple applications following Domain Driven Architectural concepts by conducting design thinking workshops and event storming sessions, Implemented service orchestration and service choreography based architectural philosophies</li>
               <li>Designed and Developed REST and SOAP API for product backends, developed and deployed multiple micro services using node (Fastify and Express frameworks) and java (spring boot), handled service communication and sync using messaging services such as SQS and Rabbit MQ.</li>
-              <li>Developed and hands on coded applications solving complex problems such as Financial Services, CRM , Appointment Management Systems , Orchestrated task scheduling and execution etc.</li>
+              <li>Developed and hands on coded applications solving complex problems such as Financial calculation Services, Reporting tools, CRM , Appointment Management Systems , Orchestrated task scheduling and execution etc.</li>
               <li>Handled clients directly for requirement gathering and sprint demos, <b>reported directly to the CEO</b> for most products</li>
               <li>Worked with multiple backend cloud and native technologies (AWS EC2, Lambda, SQS, Load balancers, VPC, Spring Boot, Spring Reactive, Jenkins, Docker) and languages (node, java and C#) for various products</li>
               <li>Designed the Database schemas for products in both non-relational (MongoDB, Firebase) and relational databases (postgres)</li>

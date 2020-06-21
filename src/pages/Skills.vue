@@ -162,6 +162,10 @@ export default {
               value: 90
             },
             {
+              name: 'Service Orchestration / Choreography',
+              value: 80
+            },
+            {
               name: 'Cloud Architectures',
               value: 70
             },
@@ -316,6 +320,10 @@ export default {
               value: 90
             },
             {
+              name: 'CSP',
+              value: 90
+            },
+            {
               name: 'Progressive Web Apps (PWA)',
               value: 90
             },
@@ -329,7 +337,7 @@ export default {
             },
             {
               name: 'Flux',
-              value: 70
+              value: 80
             },
             {
               name: 'Redux',
@@ -432,7 +440,7 @@ export default {
               value: 90
             },
             {
-              name: 'Github',
+              name: 'Git',
               value: 90
             },
             {
@@ -468,6 +476,14 @@ export default {
         {
           name: 'Other Technical Skills',
           skills: [
+            {
+              name: 'Chatbots ( Dialogflow / Twilio )',
+              value: 70
+            },
+            {
+              name: 'Vertex',
+              value: 60
+            },
             {
               name: 'OAuth',
               value: 90

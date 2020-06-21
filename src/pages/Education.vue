@@ -146,6 +146,21 @@
           <q-item-label class="text-warning" caption>Dec 2012</q-item-label>
         </q-item-section>
       </q-item>
+      <template v-for="item in linkedInCerts">
+        <q-separator :key="item.name + '_sep'" dark spaced inset />
+        <q-item :key="item.name" class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+          <q-item-section avatar>
+            <q-icon color="primary" size="100px" :name="item.icon" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-accent text-h4">{{item.name}}</q-item-label>
+            <q-item-label class="text-secondary text-h6">{{item.authority}}</q-item-label>
+          </q-item-section>
+          <q-item-section side top>
+            <q-item-label class="text-warning" caption>{{item.issued}}</q-item-label>
+          </q-item-section>
+        </q-item>
+      </template>
       <q-item-label header class="text-h3 text-warning text-center q-my-lg">Honors & Awards</q-item-label>
       <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
         <q-item-section avatar>
@@ -191,7 +206,115 @@
 
 <script>
 export default {
-  name: 'Education'
+  name: 'Education',
+  data () {
+    return {
+      linkedInCerts: [
+        {
+          name: 'Advanced Node.js',
+          issued: 'Jun 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Advanced Node.js: Scaling Applications',
+          issued: 'Jun 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Microservices Foundations',
+          issued: 'Jun 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Cloud Architecture: Advanced Concepts',
+          issued: 'May 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Migrating from REST to GraphQL',
+          issued: 'May 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Performing Complex State Management with Redux',
+          issued: 'May 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'React: Creating and Hosting a Full-Stack Site',
+          issued: 'May 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'AWS Certified Solutions Architect - Associate',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Kafka Essential Training',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Learning MongoDB',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Learning React.js',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Learning Redis',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Node.js: Design Patterns',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'React: Building Large Apps',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'React: Managing Complex Interactions',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Software Architecture Foundations',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Software Architecture: Domain-Driven Design',
+          issued: 'Apr 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        }
+      ]
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
