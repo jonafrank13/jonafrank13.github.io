@@ -22,7 +22,7 @@
               <li>Tasked with creating a Design Language System for the product by developing reusable web components</li>
               <li>Pushed code to production right from the first day, fixing bugs and shipping new features with minimal turnaround time</li>
               <li>Leading the frontend efforts of the entire company with multiple internal team dependencies</li>
-              <li>Working with reactive programming systems using Vertex (java flavour)</li>
+              <li>Working with reactive programming systems using VertX (java flavour)</li>
               <li>Developed frontend code, components with Typescript and Vue</li>
               <li>Involved with the recruiting process for interviewing and screening potential candidates</li>
             </ul>

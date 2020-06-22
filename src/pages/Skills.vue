@@ -481,7 +481,7 @@ export default {
               value: 70
             },
             {
-              name: 'Vertex',
+              name: 'VertX',
               value: 60
             },
             {
