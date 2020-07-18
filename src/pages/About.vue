@@ -23,7 +23,7 @@
         <br>
         <div class="text-left">Summary of his technical acumen & experience (in his own words)</div>
         <br>
-        <ul class="text-white text-left tech-list">
+        <ul class="text-left tech-list" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">
           <li>Highly trained with Expertise and deep knowledge in all things javascript , node , frontend , middleware, frontend Architecture and web development &lt;foraying into micro frontend architectures, IOTs and chatbots (Dialogflow)&gt;</li>
           <li>Well versed in application architecture, design and full stack development with primary focus and expertise in JavaScript (node) based stack and secondary focus in Java and Python based stack</li>
           <li>Architected and Solutioned multiple highly available, resilient, fault tolerant products and applications with architectural components such as load balancers, caches (Redis), CDNs (Cloudflare), Queues (SQS, Kafka, Rabbit MQ), Databases (Postgres, Firebase, MongoDB) and micro services</li>
@@ -31,7 +31,7 @@
           <li>Worked with both micro services and monolithic (Enterprise) architectures with basic knowledge in scaling systems vertically and horizontally, developed products in Cloud Native architectures, n-tire web applications, batch systems, message / event driven systems, IAM, OAuth 2.0 solutions etc</li>
           <li>Experience in setting up high velocity runway for applications with continuous delivery model & SOPs using project management models such as Agile, Scrum, XP and Waterfall</li>
           <li>Worked with AWS products such as EC2, VPC, SQS, Load Balancer etc for deploying solutions on the Cloud</li>
-          <li>Working with startups gave me the opportunity to wear multiple hats and take up/gain experience in Product Management and Solution Architect roles as well, personally I prefer the frontend architecture and development work as I can visibly see my work on screen and I have polished my skills to get pixel perfect UI and UX for users</li>
+          <li>Working with startups gave me the opportunity to wear multiple hats and take up/gain experience in Product Management and Software Architect roles as well, personally I prefer the frontend architecture and development work as I can visibly see my work on screen and I have polished my skills to get pixel perfect UI and UX for users</li>
           <li>Expert problem solving, workaround development, communication & presentation skills</li>
           <li>Fully self sufficient and capable of shipping an application from scratch as an Individual Contributor (IC) as well as leading a team to achieve the same end goals, my career path has helped me achieve this dual proficiency</li>
           <li>Proven legacy in people management skills, with excellent feedback from the people I have worked with and lead, A strong proponent of the servant leadership & tribe leadership philosophies</li>

@@ -56,8 +56,8 @@ export default {
               value: 90
             },
             {
-              name: 'Solution Architecture',
-              value: 85
+              name: 'Software Architecture',
+              value: 90
             },
             {
               name: 'Product Management',

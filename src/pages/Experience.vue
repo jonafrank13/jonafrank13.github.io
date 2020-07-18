@@ -37,7 +37,7 @@
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">Brimma Tech Inc.</q-item-label>
-            <q-item-label class="text-bold text-accent text-h6">Engineering Partner ( Technical Lead , Technical Solution Architect and Product Manager )</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Engineering Partner ( Technical Lead , Technical Software Architect and Product Manager )</q-item-label>
             <q-item-label caption class="text-bold">January 2017 to April 2020 (3 years 4 months)</q-item-label>
           </q-item-section>
         </template>
@@ -46,7 +46,7 @@
           <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
             <ul>
               <li>Worked as a partner to the company in the engineering domain, worked in all aspects of product design, development, shipping and maintenance from scratch and end to end</li>
-              <li>Worked predominantly as a Technical lead in a US based fin-tech domain mortgage software products startup, wore multiple hats including Technical solution architect and Product Management</li>
+              <li>Worked predominantly as a Technical lead in a US based fin-tech domain mortgage software products startup, wore multiple hats including Technical Software architect and Product Management</li>
               <li>Was the SME for frontend , web development, CSS, jank free 60fps content rendering and javascript coding</li>
               <li>Architected and solutioned multiple end-end products that are highly resilient and fault tolerant</li>
               <li>Shipped multiple applications following Domain Driven Architectural concepts by conducting design thinking workshops and event storming sessions, Implemented service orchestration and service choreography based architectural philosophies</li>
@@ -60,7 +60,7 @@
               <li>Created POCs in React for benchmarking and evaluation of frameworks.</li>
               <li>Developed the official website for the company.</li>
               <li>Participated and led efforts in all R&D work for evaluating the best and the most cutting-edge technologies available.</li>
-              <li>Handled application security in both frontend (CORS, CSRF, OAuth 2.0, XSS prevention, eval code blocking, CSP, package  audits) and the backend (VPC, SQL Injection, Multi-factor Authentication, JWT, etc)</li>
+              <li>Handled application security in both frontend ( OWASP , CORS , CSRF , OAuth 2.0 , XSS prevention , eval code blocking , CSP , package  audits) and the backend ( VPC , SQL Injection , Multi-factor Authentication , JWT , etc)</li>
               <li>Involved in product management activities as well since the company was a startup (Requirement Gathering, Architecting solution and flow, Creating the scaffolding, Project Structuring, Tool chain setup, GIT process setup, listed out the feature sets, KPIs, UX improvements and UI refinements)</li>
               <li>Incorporated agile and xp based software development process to increase team velocity and thoroughput.</li>
               <li>Formalized and implemented the CI, CD pipelines in the company</li>

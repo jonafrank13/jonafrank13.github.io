@@ -29,7 +29,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
-      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Solution Architect', 'Technical Product Manager', 'Perpetual Philomath']
+      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager', 'Perpetual Philomath']
     }
   },
   components: {

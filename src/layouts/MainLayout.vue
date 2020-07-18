@@ -9,13 +9,29 @@
       <q-list style="max-height: calc(100% - 48px);overflow-y: auto; -webkit-overflow-scrolling: touch;">
         <q-item-label
           header
-          class="text-grey-8"
+          class="text-grey-8 q-pb-none"
           :class="$q.dark.isActive ? 'bg-primary' : 'bg-white'"
-          style="position: sticky; top: 0;z-index: 9"
+          style="position: sticky; top: 0;z-index: 9;"
         >
           <div class="menu-img"></div>
           <div class="text-center text-bold text-secondary q-mt-md full-width text-h5">Jona Frank S</div>
           <div class="text-center full-width" :class="$q.dark.isActive ? 'text-white' : 'text-primary'" style="font-size: 12px">Perpetual Philomath <br> Perennially Sanguine</div>
+          <div class="text-center full-width q-py-xs">
+            <vue-typer
+              :text='roles'
+              :repeat='Infinity'
+              :shuffle='false'
+              initial-action='typing'
+              :pre-type-delay='70'
+              :type-delay='70'
+              :pre-erase-delay='2000'
+              :erase-delay='30'
+              erase-style='backspace'
+              :erase-on-complete='false'
+              caret-animation='smooth'
+              class='text-center'
+            ></vue-typer>
+          </div>
         </q-item-label>
         <EssentialLink
           v-for="link in essentialLinks"
@@ -30,7 +46,7 @@
             keep-color
             class="text-accent toggle-btn"
             unchecked-icon="wb_sunny"
-            label="Dark Mode"
+            :label="$q.dark.isActive ? 'Dark Mode' : 'Light Mode'"
             @input="handlePallet()"
           />
         </q-item>
@@ -67,19 +83,22 @@
 <script>
 import EssentialLink from 'components/EssentialLink'
 import FooterLink from 'components/FooterLink'
+import { VueTyper } from 'vue-typer'
 
 export default {
   name: 'MainLayout',
 
   components: {
     EssentialLink,
-    FooterLink
+    FooterLink,
+    VueTyper
   },
 
   data () {
     return {
       leftDrawerOpen: false,
       menuClicked: false,
+      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager'],
       essentialLinks: [
         {
           title: 'Home',

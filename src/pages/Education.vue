@@ -10,7 +10,8 @@
           <q-item-label class="text-accent text-h4">Anna University</q-item-label>
           <q-item-label class="text-secondary text-h6">Bachelor of Engineering in Electrical and Electronics Engineering (B.E EEE)</q-item-label>
           <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>St. Joseph's college of engineering</q-item-label>
-          <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>Head of Robotics, Math, English and Quiz Club. Merit Scholarship winner</q-item-label>
+          <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>Head of Robotics, Mathematics, English and Quiz Club. Merit Scholarship winner</q-item-label>
+          <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>Class Topper ( Rank 1 ) and Department Topper ( Rank 4 )</q-item-label>
         </q-item-section>
         <q-item-section side top>
           <q-item-label class="text-accent" caption>2009 - 2013</q-item-label>
@@ -28,6 +29,7 @@
           <q-item-label class="text-secondary text-h6">Junior College & High School (Science Stream)</q-item-label>
           <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>Science Club Secretary, Class Pupil Leader, Best Quizzer, Computer Science Topper</q-item-label>
           <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>[96% Computer Science, 96% Math, 96% Physics]</q-item-label>
+          <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>School Topper ( Rank 3 ), Full Attendance Award , Best Quizzer Award , Computer Science Topper Award</q-item-label>
         </q-item-section>
         <q-item-section side top>
           <q-item-label class="text-accent" caption>1995 - 2009</q-item-label>
