@@ -4,12 +4,40 @@
       <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
         <template v-slot:header>
           <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/paypal.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">PayPal</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Senior Technologist (Software Engineering &amp; Architecture)</q-item-label>
+            <q-item-label caption class="text-bold">Aug 2020 to present</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li>Architecting, Leading &amp; Building full stack applications</li>
+              <li>Maintaining &amp; developing global fraud, risks &amp; disputes platform applications</li>
+              <li>Hands on coding with Node, React, GraphQL and Java stack</li>
+              <li>Striving towards achieving level 3 of API maturity model for all APIs under the org</li>
+              <li>Guiding and supporting the team with better coding practices, code efficiency, code reviews, bringing in usage of bleeding edge methodologies, technologies and tech stacks, unblocking them for critical tasks and boosting the morale of the team</li>
+              <li>Designing new workflow requirements at both high (system) level and low (api, classes) level</li>
+              <li>Ensuring the applications conforms to the org level requirements for security, efficiency and other SLAs</li>
+              <li>Involved with the recruiting process by interviewing prospective candidates</li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
             <q-avatar icon="img:statics/icons/chargebee.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">Chargebee</q-item-label>
             <q-item-label class="text-bold text-accent text-h6">Principal Software Engineer</q-item-label>
-            <q-item-label caption class="text-bold">May 2020 to present</q-item-label>
+            <q-item-label caption class="text-bold">May 2020 to Aug 2020</q-item-label>
           </q-item-section>
         </template>
         <q-separator :dark="$q.dark.isActive" />

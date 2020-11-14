@@ -157,13 +157,27 @@
           <q-item-section>
             <q-item-label class="text-accent text-h4">{{item.name}}</q-item-label>
             <q-item-label class="text-secondary text-h6">{{item.authority}}</q-item-label>
+            <q-item-label v-if="item.desc" :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>{{item.desc}}</q-item-label>
           </q-item-section>
           <q-item-section side top>
             <q-item-label class="text-warning" caption>{{item.issued}}</q-item-label>
           </q-item-section>
         </q-item>
       </template>
-      <q-item-label header class="text-h3 text-warning text-center q-my-lg">Honors & Awards</q-item-label>
+      <q-item-label header class="text-h3 text-warning text-center q-my-lg">Honors &amp; Awards</q-item-label>
+      <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <q-item-section avatar>
+          <q-icon :color="$q.dark.isActive ? 'white' : 'primary'" size="100px" name="stars" />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label class="text-accent text-h4">Capture the Flag (Security &amp; Hacking Competition)</q-item-label>
+          <q-item-label class="text-secondary text-h6">PayPal</q-item-label>
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label class="text-warning" caption>2020</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-separator dark spaced inset />
       <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
         <q-item-section avatar>
           <q-icon :color="$q.dark.isActive ? 'white' : 'primary'" size="100px" name="stars" />
@@ -212,6 +226,33 @@ export default {
   data () {
     return {
       linkedInCerts: [
+        {
+          name: 'GraphQL with React: The Complete Developers Guide',
+          issued: 'Oct 2020',
+          icon: 'img:statics/icons/udemy.jpeg',
+          authority: 'Udemy',
+          desc: 'UC-f2657c8b-0071-4169-85dc-08abea04c7fd'
+        },
+        {
+          name: 'Software Architecture Case Studies',
+          issued: 'Oct 2020',
+          icon: 'img:statics/icons/udemy.jpeg',
+          authority: 'Udemy',
+          desc: 'UC-5baafe16-dfea-4938-8829-cd0d20cb0eef'
+        },
+        {
+          name: 'The Complete React Developer Course with Hooks and Redux',
+          issued: 'Oct 2020',
+          icon: 'img:statics/icons/udemy.jpeg',
+          authority: 'Udemy',
+          desc: 'UC-ccf711aa-4fb1-4689-82e7-ecb4bf8cbe3b'
+        },
+        {
+          name: 'JavaScript: Best Practices for Data',
+          issued: 'Nov 2020',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
         {
           name: 'Advanced Node.js',
           issued: 'Jun 2020',
