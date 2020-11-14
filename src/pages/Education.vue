@@ -26,7 +26,7 @@
         </q-item-section>
         <q-item-section>
           <q-item-label class="text-accent text-h4">St.John's English School and Junior College</q-item-label>
-          <q-item-label class="text-secondary text-h6">Junior College & High School (Science Stream)</q-item-label>
+          <q-item-label class="text-secondary text-h6">Junior College &amp; High School (Science Stream)</q-item-label>
           <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>Science Club Secretary, Class Pupil Leader, Best Quizzer, Computer Science Topper</q-item-label>
           <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>[96% Computer Science, 96% Math, 96% Physics]</q-item-label>
           <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>School Topper ( Rank 3 ), Full Attendance Award , Best Quizzer Award , Computer Science Topper Award</q-item-label>
