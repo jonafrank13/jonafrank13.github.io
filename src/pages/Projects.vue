@@ -8,7 +8,7 @@
           :src="project.img"
         />
         <q-card-section>
-          <div class="text-overline text-warning">{{project.date}}</div>
+          <div class="text-warning">{{project.date}}</div>
           <div class="text-h5 q-mt-sm q-mb-xs text-accent">{{project.name}}</div>
           <div class="text-caption text-grey">{{project.desc}}</div>
         </q-card-section>
@@ -17,6 +17,9 @@
         </q-card-actions>
       </q-card>
     </div>
+    <q-page-sticky v-if="$q.platform.is.mobile" position="bottom-right" :offset="[15, 15]">
+      <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' })" color="warning" />
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -76,7 +79,7 @@ export default {
           img: '/statics/hnpwa.png'
         },
         {
-          name: 'ElectroOculogram Based Eye Gesture Recognition',
+          name: 'ElectroOculogram - Eye Gesture Recognition',
           date: 'Sep 2012',
           desc: 'Created a User - Computer/Platform Interface using electrooculogram based gesture recognition',
           link: 'http://onloop.net/hairyplotter/',

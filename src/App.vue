@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import Vue from 'vue'
+Vue.prototype.windowObj = window
 export default {
   name: 'App'
 }

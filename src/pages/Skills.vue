@@ -31,6 +31,9 @@
         </div>
       </div>
     </div>
+    <q-page-sticky v-if="$q.platform.is.mobile" position="bottom-right" :offset="[15, 15]">
+      <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' })" color="warning" />
+    </q-page-sticky>
   </q-page>
 </template>
 
@@ -192,7 +195,7 @@ export default {
             },
             {
               name: 'React',
-              value: 50
+              value: 90
             },
             {
               name: 'Ember',
@@ -341,7 +344,7 @@ export default {
             },
             {
               name: 'Redux',
-              value: 50
+              value: 80
             },
             {
               name: 'Vuex',

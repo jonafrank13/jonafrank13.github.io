@@ -16,13 +16,13 @@
         <q-card>
           <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
             <ul>
-              <li>Architecting, Leading &amp; Building full stack applications</li>
+              <li>Architecting, Leading &amp; Building full stack applications (services)</li>
               <li>Maintaining &amp; developing global fraud, risks &amp; disputes platform applications</li>
-              <li>Hands on coding with Node, React, GraphQL and Java stack</li>
+              <li>Hands on coding with Node, React, Typescript, GraphQL and Java (APIs)</li>
               <li>Striving towards achieving level 3 of API maturity model for all APIs under the org</li>
               <li>Guiding and supporting the team with better coding practices, code efficiency, code reviews, bringing in usage of bleeding edge methodologies, technologies and tech stacks, unblocking them for critical tasks and boosting the morale of the team</li>
               <li>Designing new workflow requirements at both high (system) level and low (api, classes) level</li>
-              <li>Ensuring the applications conforms to the org level requirements for security, efficiency and other SLAs</li>
+              <li>Ensuring the applications conforms to the org level requirements for security, efficiency, accessibility and other SLAs</li>
               <li>Involved with the recruiting process by interviewing prospective candidates</li>
             </ul>
           </q-card-section>
@@ -37,7 +37,7 @@
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">Chargebee</q-item-label>
             <q-item-label class="text-bold text-accent text-h6">Principal Software Engineer</q-item-label>
-            <q-item-label caption class="text-bold">May 2020 to Aug 2020</q-item-label>
+            <q-item-label caption class="text-bold">May 2020 to Aug 2020 (4 months)</q-item-label>
           </q-item-section>
         </template>
         <q-separator :dark="$q.dark.isActive" />
@@ -134,6 +134,105 @@
         </q-card>
       </q-expansion-item>
     </q-list>
+    <div class="text-h4 text-warning q-my-md">Other Gigs</div>
+    <q-list :dark="$q.dark.isActive" class="full-width">
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/newton.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">Newton School</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Technical full-stack interviewer (freelance)</q-item-label>
+            <q-item-label caption class="text-bold">Dec 2020 to present</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li>I help conduct mock interviews for students</li>
+              <li>I conduct interviews across the full stack covering both niche and generic topics like react, redux, node, javascript, datastructures, algorithms, design patterns, OOPS, web development, java, databases etc</li>
+              <li>Covering levels from beginners to experts</li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/work.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">Scintell</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Technical Manager (freelance)</q-item-label>
+            <q-item-label caption class="text-bold">Jan 2014 – Sep 2015</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li><a class="text-warning" href="http://sms.scintell.com">http://sms.scintell.com</a></li>
+              <li>Worked as a freelance full stack developer with the designation of technical manager for a Malaysian e-commerce store</li>
+              <li>Handled the entire online product for a more than a year</li>
+              <li>Involved in developing features and fixing existing bugs in the product</li>
+              <li>Involved in deployment and managing the hosted build online with minimal downtime</li>
+              <li>OS: Windows<br>WEB SERVERS: PHP (Zend)<br>DATABASE: MySQL<br>LANGUAGES: PHP, JavaScript<br>OTHER TECHNOLOGIES: HTML 5, CSS3, jQuery</li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/work.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">Al Consultancy Asia</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Technical Consultant (freelance)</q-item-label>
+            <q-item-label caption class="text-bold">Sep 2013 – Dec 2013</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li>Worked as a technical consultant for developing customised windows applications</li>
+              <li>Developed multiple applications/tools for customised functions enabling efficient workflow</li>
+              <li>Developed in Visual Studio</li>
+              <li>OS: Windows<br>LANGUAGES: Vb.net , C#<br>TOOLS: Visual Studio</li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/work.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">Instapic</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Intern</q-item-label>
+            <q-item-label caption class="text-bold">Jan 2013 – Jun 2013</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li>Worked on creating python modules for image processing and computer vision</li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+    </q-list>
+    <q-page-sticky v-if="$q.platform.is.mobile" position="bottom-right" :offset="[15, 15]">
+      <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' })" color="warning" />
+    </q-page-sticky>
   </q-page>
 </template>
 
