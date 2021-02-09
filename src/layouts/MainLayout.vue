@@ -6,7 +6,7 @@
       :breakpoint="500"
       :content-class="$q.dark.isActive ? 'flex justify-between bg-primary' : 'flex justify-between'"
     >
-      <q-list style="max-height: calc(100% - 48px);overflow-y: auto; -webkit-overflow-scrolling: touch;">
+      <q-list style="max-height: calc(100% - 68px);overflow-y: auto; -webkit-overflow-scrolling: touch;">
         <q-item-label
           header
           class="text-grey-8 q-pb-none"
@@ -51,7 +51,12 @@
           />
         </q-item>
       </q-list>
-      <footer-link class="full-width" />
+      <div class="full-width flex column justify-end">
+        <footer-link />
+        <!-- DO NOT REMOVE THIS LINE -->
+        <div style="border-top: 0.5px solid white" class="text-center text-caption text-weight-thin">Made by - <a class="text-warning" href="https://jonafrank13.github.io/">Jona Frank</a> - 2021</div>
+        <!-- DO NOT REMOVE THIS LINE -->
+      </div>
     </q-drawer>
 
     <q-page-container class="relative-position">
@@ -108,7 +113,7 @@ export default {
         },
         {
           title: 'About',
-          caption: 'A small summary of me',
+          caption: 'Who is this guy?',
           icon: 'face',
           link: '/about'
         },

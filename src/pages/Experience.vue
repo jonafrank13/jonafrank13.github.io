@@ -16,7 +16,7 @@
         <q-card>
           <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
             <ul>
-              <li>Architecting, Leading &amp; Building full stack applications (services)</li>
+              <li>Architecting, Leading &amp; Building full stack applications and services that are highly distributed &amp; scalable. Handling millions of transactions and billions of requests per day!</li>
               <li>Maintaining &amp; developing global fraud, risks &amp; disputes platform applications</li>
               <li>Hands on coding with Node, React, Typescript, GraphQL and Java (APIs)</li>
               <li>Striving towards achieving level 3 of API maturity model for all APIs under the org</li>
@@ -24,6 +24,8 @@
               <li>Designing new workflow requirements at both high (system) level and low (api, classes) level</li>
               <li>Ensuring the applications conforms to the org level requirements for security, efficiency, accessibility and other SLAs</li>
               <li>Involved with the recruiting process by interviewing prospective candidates</li>
+              <li>Core contributor for building a service orchestrator that asynchronously operates to invoke and update multiple workflows</li>
+              <li>Involved with Continuous integration , delivery and monitoring of code / services at PayPal</li>
             </ul>
           </q-card-section>
         </q-card>

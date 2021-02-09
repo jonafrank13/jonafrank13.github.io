@@ -1,6 +1,6 @@
 <template>
   <q-page class="flex row flex-center justify-center content-center front-page q-pa-sm">
-    <div class="img-box col-12"></div>
+    <div class="col-12 img-container"><div class="img-box"></div></div>
     <h6 class="text-secondary col-12 text-bold text-center q-mb-none">Howdy from</h6>
     <h4 class="text-accent col-12 text-center text-bold q-mb-none q-mt-none">___ Jona Frank ___</h4>
     <h6 class="text-secondary col-12 text-bold text-center q-my-sm">I am a
@@ -42,14 +42,23 @@ export default {
 .front-page {
   position: relative;
 }
-.img-box {
+.img-container {
   height: 200px;
   width: 200px;
   position: relative;
   border: 5px solid white;
-  transform: rotate(45deg);
+  transform: rotate(0deg);
+  border-radius: 15%;
+  margin: auto;
+}
+.img-box {
+  height: 200px;
+  width: 200px;
+  position: relative;
   overflow: hidden;
   border-radius: 20%;
+  border: 5px solid white;
+  transform: rotate(45deg);
 }
 .img-box::before {
   content: '';
@@ -60,5 +69,33 @@ export default {
   background-size: cover;
   background-position: center;
   transform: rotate(-45deg) scale(1.38) translate3d(8px, 5px, 0);
+}
+.img-container::after, .img-container::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: spread 25s linear infinite;
+}
+
+@keyframes spread {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 800% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.img-container::after, .img-container::before {
+  filter: blur(50px);
 }
 </style>
