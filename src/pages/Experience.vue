@@ -232,9 +232,6 @@
         </q-card>
       </q-expansion-item>
     </q-list>
-    <q-page-sticky v-if="$q.platform.is.mobile" position="bottom-right" :offset="[15, 15]">
-      <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' })" color="warning" />
-    </q-page-sticky>
   </q-page>
 </template>
 

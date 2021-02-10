@@ -6,6 +6,7 @@
     exact
     active-class="highlight"
     class="q-py-md"
+    @click="handleClick"
   >
     <q-item-section
       v-if="icon"
@@ -45,6 +46,13 @@ export default {
     icon: {
       type: String,
       default: ''
+    }
+  },
+  methods: {
+    handleClick: function () {
+      if (window?.navigator?.vibrate) {
+        navigator.vibrate(100)
+      }
     }
   }
 }

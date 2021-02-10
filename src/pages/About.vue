@@ -43,9 +43,6 @@
       <div class="text-warning" style="padding-top:14.5px">Professional</div>
       <q-toggle class="text-warning" :dark="$q.dark.isActive" color="secondary" size="lg" label="Personal" v-model="is_personal" />
     </div>
-    <q-page-sticky v-if="$q.platform.is.mobile" position="bottom-right" :offset="[15, 15]">
-      <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' })" color="warning" />
-    </q-page-sticky>
   </q-page>
 </template>
 

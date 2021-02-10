@@ -59,7 +59,7 @@
       </div>
     </q-drawer>
 
-    <q-page-container class="relative-position">
+    <q-page-container v-scroll="handleScroll" class="relative-position">
       <q-btn
         flat
         dense
@@ -71,7 +71,7 @@
         :class="menuClicked ? '' : 'heartBeat'"
         size="lg"
         style="z-index: 10;padding-left: inherit;"
-        @click="leftDrawerOpen = !leftDrawerOpen;menuClicked = true;"
+        @click="handleMenuClick"
       />
       <transition
         name="transitions"
@@ -80,6 +80,16 @@
         mode="out-in"
       >
         <router-view />
+      </transition>
+      <transition
+        name="transitions"
+        enter-active-class="animated slideInUp"
+        leave-active-class="animated slideOutDown"
+        mode="out-in"
+      >
+        <q-page-sticky v-if="scrollPosition > 200" position="bottom-right" :offset="[15, 15]">
+          <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' })" color="warning" />
+        </q-page-sticky>
       </transition>
     </q-page-container>
   </q-layout>
@@ -101,6 +111,7 @@ export default {
 
   data () {
     return {
+      scrollPosition: 0,
       leftDrawerOpen: false,
       menuClicked: false,
       roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager'],
@@ -154,7 +165,21 @@ export default {
   methods: {
     handlePallet: function () {
       this.$q.dark.toggle()
+      this.vibrate()
       localStorage.setItem('dark', this.$q.dark.isActive)
+    },
+    handleScroll: function (pos) {
+      this.scrollPosition = pos
+    },
+    handleMenuClick: function () {
+      this.leftDrawerOpen = !this.leftDrawerOpen
+      this.menuClicked = true
+      this.vibrate()
+    },
+    vibrate: function () {
+      if (window?.navigator?.vibrate) {
+        navigator.vibrate(100)
+      }
     }
   },
 
