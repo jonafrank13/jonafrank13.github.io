@@ -88,7 +88,7 @@
         mode="out-in"
       >
         <q-page-sticky v-if="scrollPosition > 200" position="bottom-right" :offset="[15, 15]">
-          <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' })" color="warning" />
+          <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' });vibrate();" color="warning" />
         </q-page-sticky>
       </transition>
     </q-page-container>
@@ -178,7 +178,7 @@ export default {
     },
     vibrate: function () {
       if (window?.navigator?.vibrate) {
-        navigator.vibrate(100)
+        navigator.vibrate(75)
       }
     }
   },

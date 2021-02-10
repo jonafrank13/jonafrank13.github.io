@@ -41,7 +41,7 @@
     </div>
     <div class="q-my-md full-width flex justify-center">
       <div class="text-warning" style="padding-top:14.5px">Professional</div>
-      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="secondary" size="lg" label="Personal" v-model="is_personal" />
+      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="secondary" size="lg" label="Personal" @click="vibrate" v-model="is_personal" />
     </div>
   </q-page>
 </template>
@@ -52,6 +52,13 @@ export default {
   data () {
     return {
       is_personal: false
+    }
+  },
+  methods: {
+    vibrate: function () {
+      if (window?.navigator?.vibrate) {
+        navigator.vibrate(75)
+      }
     }
   }
 }
