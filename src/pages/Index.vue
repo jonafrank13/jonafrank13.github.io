@@ -50,6 +50,7 @@ export default {
   transform: rotate(0deg);
   border-radius: 15%;
   margin: auto;
+  animation: mould 5s linear infinite;
 }
 .img-box {
   height: 200px;
@@ -58,7 +59,9 @@ export default {
   overflow: hidden;
   border-radius: 20%;
   border: 5px solid white;
+  background-color: #eff1ea;
   transform: rotate(45deg);
+  animation: mould 5s linear infinite;
 }
 .img-box::before {
   content: '';
@@ -92,6 +95,24 @@ export default {
   }
   100% {
     background-position: 0 0;
+  }
+}
+
+@keyframes mould {
+  0% {
+    border-radius: 0;
+  }
+  25% {
+    border-radius: 10%;
+  }
+  50% {
+    border-radius: 20%;
+  }
+  75% {
+    border-radius: 10%;
+  }
+  100% {
+    border-radius: 0;
   }
 }
 
