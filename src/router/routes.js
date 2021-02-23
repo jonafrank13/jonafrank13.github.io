@@ -10,6 +10,7 @@ const routes = [
       { path: '/experience', component: () => import('pages/Experience.vue') },
       { path: '/projects', component: () => import('pages/Projects.vue') },
       { path: '/education', component: () => import('pages/Education.vue') },
+      { path: '/you', component: () => import('pages/You.vue') },
       { path: '/contact', component: () => import('pages/Contact.vue') }
     ]
   }

@@ -50,6 +50,16 @@
             @input="handlePallet()"
           />
         </q-item>
+        <q-item>
+          <q-btn
+            outline
+            class="full-width"
+            color="warning"
+            @click="$q.fullscreen.toggle()"
+            :icon="$q.fullscreen.isActive ? 'fullscreen_exit' : 'fullscreen'"
+            :label="$q.fullscreen.isActive ? 'Exit Fullscreen' : 'Go Fullscreen'"
+          />
+        </q-item>
       </q-list>
       <div class="full-width flex column justify-end">
         <footer-link />
@@ -99,6 +109,7 @@
 import EssentialLink from 'components/EssentialLink'
 import FooterLink from 'components/FooterLink'
 import { VueTyper } from 'vue-typer'
+import { utils } from 'src/mixins/utils'
 
 export default {
   name: 'MainLayout',
@@ -153,6 +164,12 @@ export default {
           link: '/education'
         },
         {
+          title: 'About You',
+          caption: 'See what i know 😉',
+          icon: 'blur_on',
+          link: '/you'
+        },
+        {
           title: 'Contact Details',
           caption: 'My contact details',
           icon: 'contact_phone',
@@ -175,11 +192,6 @@ export default {
       this.leftDrawerOpen = !this.leftDrawerOpen
       this.menuClicked = true
       this.vibrate()
-    },
-    vibrate: function () {
-      if (window?.navigator?.vibrate) {
-        navigator.vibrate(75)
-      }
     }
   },
 
@@ -188,7 +200,9 @@ export default {
       localStorage.setItem('dark', true)
     }
     this.$q.dark.set(localStorage.getItem('dark') === 'true')
-  }
+  },
+
+  mixins: [utils]
 }
 </script>
 <style lang="stylus" scoped>

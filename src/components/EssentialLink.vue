@@ -14,7 +14,6 @@
     >
       <q-icon :name="icon" color="warning" />
     </q-item-section>
-
     <q-item-section>
       <q-item-label class="text-accent text-bold">{{ title }}</q-item-label>
       <q-item-label :class="$q.dark.isActive ? 'text-white' : 'text-primary'" caption>
@@ -25,6 +24,8 @@
 </template>
 
 <script>
+import { utils } from 'src/mixins/utils'
+
 export default {
   name: 'EssentialLink',
   props: {
@@ -48,13 +49,7 @@ export default {
       default: ''
     }
   },
-  methods: {
-    vibrate: function () {
-      if (window?.navigator?.vibrate) {
-        navigator.vibrate(75)
-      }
-    }
-  }
+  mixins: [utils]
 }
 </script>
 <style lang="stylus" scoped>

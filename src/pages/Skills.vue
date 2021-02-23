@@ -9,7 +9,7 @@
     </q-input>
     <div class="q-mt-md full-width flex justify-center">
       <div class="text-warning" style="padding-top:14.5px">Graph</div>
-      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="accent" size="lg" label="List" @click="vibrate" v-model="is_list" />
+      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="accent" size="lg" label="List" @input="vibrate" v-model="is_list" />
     </div>
     <div v-for="segment in filtered_skills"  :key="segment.name">
       <h5 v-if="segment.skills.length > 0" class="full-width q-my-lg q-mt-xl text-center text-bold">{{segment.name}}</h5>
@@ -35,6 +35,8 @@
 </template>
 
 <script>
+import { utils } from 'src/mixins/utils'
+
 export default {
   name: 'Skills',
   data () {
@@ -593,13 +595,7 @@ export default {
       }
     }
   },
-  methods: {
-    vibrate: function () {
-      if (window?.navigator?.vibrate) {
-        navigator.vibrate(75)
-      }
-    }
-  }
+  mixins: [utils]
 }
 </script>
 <style lang="scss" scoped>

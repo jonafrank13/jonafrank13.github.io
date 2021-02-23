@@ -10,16 +10,20 @@
       Sorry, nothing here...<strong>(404)</strong>
     </p>
     <q-btn
-      color="secondary"
+      color="primary"
       style="width:200px;"
       to="/"
       label="Go back"
+      @click="vibrate"
     />
   </div>
 </template>
 
 <script>
+import { utils } from 'src/mixins/utils'
+
 export default {
-  name: 'Error404'
+  name: 'Error404',
+  mixins: [utils]
 }
 </script>

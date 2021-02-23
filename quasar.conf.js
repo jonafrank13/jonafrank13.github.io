@@ -49,7 +49,8 @@ module.exports = function (ctx) {
 
       // Quasar plugins
       plugins: [
-        'AddressbarColor'
+        'AddressbarColor',
+        'AppFullscreen'
       ]
     },
 

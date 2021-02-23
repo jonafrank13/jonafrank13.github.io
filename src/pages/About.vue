@@ -24,7 +24,7 @@
         <div class="text-left">Summary of his technical acumen & experience (in his own words)</div>
         <br>
         <ul class="text-left tech-list" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">
-          <li>Highly trained with Expertise and deep knowledge in all things javascript , node , frontend , middleware, frontend Architecture and web development &lt;foraying into micro frontend architectures, IOTs and chatbots (Dialogflow)&gt;</li>
+          <li>Highly trained with expertise and deep knowledge in all things javascript , node , frontend , middleware, frontend Architecture and web development &lt;foraying into micro frontend architectures, IOTs and chatbots (Dialogflow)&gt;</li>
           <li>Well versed in application architecture, design and full stack development with primary focus and expertise in JavaScript (node) based stack and secondary focus in Java and Python based stack</li>
           <li>Architected and Solutioned multiple highly available, resilient, fault tolerant products and applications with architectural components such as load balancers, caches (Redis), CDNs (Cloudflare), Queues (SQS, Kafka, Rabbit MQ), Databases (Postgres, Firebase, MongoDB) and micro services</li>
           <li>Developed, Architected and shipped couple of apps with service orchestration / service choreography based microservice backends / middleware that scales elastically</li>
@@ -41,12 +41,14 @@
     </div>
     <div class="q-my-md full-width flex justify-center">
       <div class="text-warning" style="padding-top:14.5px">Professional</div>
-      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="secondary" size="lg" label="Personal" @click="vibrate" v-model="is_personal" />
+      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="secondary" size="lg" label="Personal" @input="vibrate" v-model="is_personal" />
     </div>
   </q-page>
 </template>
 
 <script>
+import { utils } from 'src/mixins/utils'
+
 export default {
   name: 'About',
   data () {
@@ -54,13 +56,7 @@ export default {
       is_personal: false
     }
   },
-  methods: {
-    vibrate: function () {
-      if (window?.navigator?.vibrate) {
-        navigator.vibrate(75)
-      }
-    }
-  }
+  mixins: [utils]
 }
 </script>
 <style lang="scss" scoped>
