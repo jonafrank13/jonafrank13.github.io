@@ -4,10 +4,11 @@
       <h4 class="full-width text-accent text-bold q-mt-sm q-mb-lg">About You</h4>
       <template v-if="userData.region">
         <p>
-          <span>Hi , It seems like you are accessing the my website from a the ip address 📡 <i>{{userData.ip}}</i>, your internet service provider is <i>{{userData.org}}</i></span><br>
+          <span>Hi , It seems like you are accessing the my website from the ip address 📡 <i>{{userData.ip}}</i>, your internet service provider is <i>{{userData.org}}</i></span><br>
           <span>I see that you are using a <i>{{userData.device.brand}}&nbsp;{{userData.device.type}}</i>&nbsp;💻&nbsp;specifically a <i>{{userData.client.name}}</i> browser 🌐 , which is on version 🚥<i>{{userData.client.version}}</i></span><br>
           <span>Your OS 💿 seems to be <i>{{userData.os.name}}</i>, which is on version 🚥<i>{{userData.os.version}}</i>&nbsp;<span v-if="userData.memory">having at least {{userData.memory}} GB of RAM.</span></span><br>
           <span>I sense that you are currently at &nbsp;🌎<i>{{userData.latitude}}&#176;</i> latitude &amp; <i>{{userData.longitude}}&#176;</i> longitude, which is around 🗺️<i>{{userData.city}},</i>&nbsp;<i>{{userData.region}},</i>&nbsp;<i>{{userData.country_name}}</i><span v-if="userData.postal"> with the zipcode <i>{{userData.postal}}</i></span></span><br>
+          <span>Your device's screen height is <i>{{userData.height}}</i>&nbsp;pixels and screen width is <i>{{userData.width}}</i>&nbsp;pixels, <span v-if="userData.mode"> Your device is currently in the <i>{{userData.mode}}</i>&nbsp;mode</span><span v-if="userData.angle"> and seems to be tilted at a <i>{{userData.angle}}&#176;</i>angle</span></span><br>
         </p>
         <p v-if="userData.orientation">
           Your device's current orientation is x:&nbsp;<i>{{userData.orientation.alpha}}</i>&nbsp;y:&nbsp;<i>{{userData.orientation.beta}}</i>&nbsp;z:&nbsp;<i>{{userData.orientation.gamma}}</i>
@@ -18,7 +19,7 @@
         <p v-if="userData.connection">
           <span>Your network speed 💨 seems to be around <i>{{userData.connection.downlink}}&nbsp;mbps</i>&nbsp;which is effectively a&nbsp;<i>{{userData.connection.effectiveType}}</i>&nbsp;connection 🔗</span>
         </p>
-        <p>Your browser / device is set to&nbsp;<i>{{userData.darkMode ? 'dark 🌚' : 'light 🌞'}}</i>&nbsp;mode</p>
+        <p>Your browser / device is set to&nbsp;{{userData.darkMode ? 'dark 🌚' : 'light 🌞'}}&nbsp;mode</p>
       </template>
       <q-spinner-ball v-else color="secondary" size="10em" />
     </div>
@@ -38,10 +39,15 @@ export default {
   mounted: function () {
     const device = new DeviceDetector().parse(window.navigator.userAgent)
     const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-    const connection = navigator.connection
-    const memory = navigator.deviceMemory
+    const connection = window.navigator.connection
+    const memory = window.navigator.deviceMemory
+    const height = window.innerHeight
+    const width = window.innerWidth
+    const angle = window.screen?.orientation?.angle
+    const mode = window.screen?.orientation?.type?.indexOf('landscape') > -1 ? 'landscape' : 'portrait'
+
     fetch('https://ipapi.co/json/').then(res => res.json()).then(data => {
-      this.userData = { ...data, ...device, connection, memory, darkMode: isDark }
+      this.userData = { ...data, ...device, connection, memory, height, width, angle, mode, darkMode: isDark }
       window.addEventListener('deviceorientation', this.handleOrientation, true)
       window.navigator.getBattery().then(data => {
         this.$set(this.userData, 'battery', data)
