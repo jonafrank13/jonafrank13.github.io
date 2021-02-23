@@ -51,9 +51,9 @@ export default {
   },
   methods: {
     handleOrientation: function (event) {
-      const alpha = event.alpha
-      const beta = event.beta
-      const gamma = event.gamma
+      const alpha = Number(event.alpha).toFixed(2)
+      const beta = Number(event.beta).toFixed(2)
+      const gamma = Number(event.gamma).toFixed(2)
       this.$set(this.userData, 'orientation', { alpha, beta, gamma })
     }
   },
