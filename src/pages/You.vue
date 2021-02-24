@@ -61,9 +61,13 @@ export default {
       this.$set(this.userData, 'orientation', { alpha, beta, gamma })
     },
     handleScreenOrientation: function () {
+      const height = window.innerHeight
+      const width = window.innerWidth
       const angle = window.screen?.orientation?.angle
       const mode = window.screen?.orientation?.type?.indexOf('landscape') > -1 ? 'landscape' : 'portrait'
 
+      this.$set(this.userData, 'height', height)
+      this.$set(this.userData, 'width', width)
       this.$set(this.userData, 'angle', angle)
       this.$set(this.userData, 'mode', mode)
     }
