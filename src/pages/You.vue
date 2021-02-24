@@ -60,7 +60,7 @@ export default {
       const gamma = Number(event.gamma).toFixed(2)
       this.$set(this.userData, 'orientation', { alpha, beta, gamma })
     },
-    handleScreenOrientation: function (event) {
+    handleScreenOrientation: function () {
       const angle = window.screen?.orientation?.angle
       const mode = window.screen?.orientation?.type?.indexOf('landscape') > -1 ? 'landscape' : 'portrait'
 
