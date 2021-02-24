@@ -5,7 +5,7 @@
       <template v-if="userData.region">
         <p>Hi visitor, You seem to be accessing my website from the ip address 📡 <i>{{userData.ip}}</i>, your internet service provider is <i>{{userData.org}}</i></p>
         <p>I see that you are using a <i>{{userData.device.brand}}&nbsp;{{userData.device.type}}</i>&nbsp;💻&nbsp;specifically a <i>{{userData.client.name}}</i> browser 🌐 , which is on version 🚥<i>{{userData.client.version}}</i></p>
-        <p>Your OS 💿 seems to be <i>{{userData.os.name}}</i>, which is on version 🚥<i>{{userData.os.version}}</i>&nbsp;<span v-if="userData.memory">having at least <i>{{userData.memory}} GB</i> of RAM.</span></p>
+        <p>Your OS 💿 seems to be <i>{{userData.os.name}}</i>, which is on version 🚥<i>{{userData.os.version}}</i>&nbsp;<span v-if="userData.memory">having at least <i>{{userData.memory}} GB</i> of RAM</span></p>
         <p>I sense that you are currently at &nbsp;🌎<i>{{userData.latitude}}&#176;</i> latitude and&nbsp;🌎<i>{{userData.longitude}}&#176;</i> longitude, which is around 🗺️<i>{{userData.city}},</i>&nbsp;<i>{{userData.region}},</i>&nbsp;<i>{{userData.country_name}}</i><span v-if="userData.postal"> with the 🏙 zipcode <i>{{userData.postal}}</i></span></p>
         <p>Your device's screen ↕️ height is <i>{{userData.height}}</i>&nbsp;pixels and screen ↔️ width is <i>{{userData.width}}</i>&nbsp;pixels, <span v-if="userData.mode"> Your device is currently in the <i>{{userData.mode}}</i>&nbsp;{{userData.mode === 'landscape' ? '🖥' : '📱'}}&nbsp;mode</span><span v-if="userData.angle"> and seems to be tilted at a <i>{{userData.angle}}&#176;</i>angle</span></p>
         <p v-if="userData.orientation">
