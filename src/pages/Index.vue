@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex row flex-center justify-center content-center front-page q-pa-sm">
     <div class="col-12 img-container"><div class="img-box"></div></div>
-    <h6 class="text-secondary col-12 text-bold text-center q-mb-none">Howdy from</h6>
+    <h6 class="text-secondary col-12 text-bold text-center q-mb-none txt-shadow">Howdy from</h6>
     <h4 class="text-accent col-12 text-center text-bold q-mb-none q-mt-none">___ Jona Frank ___</h4>
     <h6 class="text-secondary col-12 text-bold text-center q-my-sm">I am a
       <vue-typer
@@ -62,6 +62,7 @@ export default {
   background-color: #eff1ea;
   transform: rotate(45deg);
   animation: mould 5s linear infinite;
+  box-shadow: -5px 5px 50px 0px rgba(0,0,0,0.8);
 }
 .img-box::before {
   content: '';
@@ -84,6 +85,7 @@ export default {
   height: calc(100% + 4px);
   z-index: -1;
   animation: spread 25s linear infinite;
+  box-shadow: -5px 5px 50px 0px rgba(0,0,0,0.8);
 }
 
 @keyframes spread {

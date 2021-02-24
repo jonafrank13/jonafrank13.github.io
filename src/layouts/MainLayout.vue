@@ -77,7 +77,7 @@
         icon="menu"
         color="secondary"
         aria-label="Menu"
-        class="fixed-top-left animated infinite slow"
+        class="fixed-top-left animated infinite slow txt-shadow"
         :class="menuClicked ? '' : 'heartBeat'"
         size="lg"
         style="z-index: 10;padding-left: inherit;"
@@ -165,7 +165,7 @@ export default {
         },
         {
           title: 'About You',
-          caption: 'See what i know 😉',
+          caption: 'Let\'s see what i know',
           icon: 'blur_on',
           link: '/you'
         },
