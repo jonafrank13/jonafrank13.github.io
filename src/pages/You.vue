@@ -17,6 +17,12 @@
         <p v-if="userData.connection">
           <span>Your network speed 🏃🏾‍♂️ seems to be around <i>{{userData.connection.downlink}}&nbsp;mbps ⚡️</i>&nbsp;which is effectively a&nbsp;<i>{{userData.connection.effectiveType}}</i>&nbsp;connection 🔗</span>
         </p>
+        <p v-if="userData.referrer">
+          <span>You seem to have arrived here from the website  📣 <i>{{userData.referrer}}</i>&nbsp;</span>
+        </p>
+        <p v-if="userData.clipboard">
+          <span>You seem to have the following content copied in your clipboard 📋 "<i>{{userData.clipboard}}</i>"&nbsp;</span>
+        </p>
         <p>Your browser / device is set to&nbsp;<i>{{userData.darkMode ? 'dark' : 'light'}}</i>&nbsp;{{userData.darkMode ? '🌚' : '🌞'}}&nbsp;mode</p>
       </template>
       <q-spinner-ball v-else color="secondary" size="10em" />
@@ -43,13 +49,17 @@ export default {
     const width = window.innerWidth
     const angle = window.screen?.orientation?.angle
     const mode = window.screen?.orientation?.type?.indexOf('landscape') > -1 ? 'landscape' : 'portrait'
+    const referrer = window.document.referrer
 
     fetch('https://ipapi.co/json/').then(res => res.json()).then(data => {
-      this.userData = { ...data, ...device, connection, memory, height, width, angle, mode, darkMode: isDark }
+      this.userData = { ...data, ...device, connection, memory, height, width, angle, mode, darkMode: isDark, referrer }
       window.addEventListener('deviceorientation', this.handleOrientation, true)
       window.addEventListener('orientationchange', this.handleScreenOrientation, false)
       window.navigator.getBattery().then(data => {
         this.$set(this.userData, 'battery', data)
+      })
+      navigator.clipboard.readText().then(txt => {
+        this.$set(this.userData, 'clipboard', txt)
       })
     })
   },
