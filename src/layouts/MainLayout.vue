@@ -231,6 +231,16 @@ export default {
         this.currentCommand = text
       })
 
+      recognition.addEventListener('error', event => {
+        console.error('Speech recognition error detected: ' + event.error)
+        this.speaking = false
+        this.isSpeechAvailable = false
+        this.$q.notify({
+          type: 'negative',
+          message: 'Sorry, permission to record voice was denied :('
+        })
+      })
+
       recognition.addEventListener('end', () => {
         setTimeout(() => {
           const parseText = this.currentCommand
