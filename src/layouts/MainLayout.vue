@@ -101,15 +101,35 @@
           <q-btn fab-mini icon="keyboard_arrow_up" @click="windowObj.scroll({ top: 0, behavior: 'smooth' });vibrate();" color="warning" />
         </q-page-sticky>
       </transition>
+      <q-page-sticky v-if="isSpeechAvailable" position="bottom-left" :offset="[15, 15]">
+        <q-btn fab-mini ripple icon="mic" class="animated infinite slow" :class="speaking ? 'heartBeat' : ''" @click="speech();vibrate();" color="accent">
+           <q-tooltip content-class="bg-secondary">Speak!</q-tooltip>
+        </q-btn>
+      </q-page-sticky>
+      <q-dialog v-model="speaking">
+        <q-card>
+          <q-card-section class="text-center text-bold text-italic text-accent"><h5>{{currentCommand}}</h5></q-card-section>
+          <SineWave />
+          <q-card-section class="text-center text-bold text-italic text-secondary">
+            <p>Try saying the section name like experience or about...</p>
+            <p>or try saying github...</p>
+          </q-card-section>
+        </q-card>
+      </q-dialog>
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink'
-import FooterLink from 'components/FooterLink'
 import { VueTyper } from 'vue-typer'
 import { utils } from 'src/mixins/utils'
+import SineWave from 'components/SineWave'
+import FooterLink from 'components/FooterLink'
+import EssentialLink from 'components/EssentialLink'
+
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+const recognition = SpeechRecognition ? new SpeechRecognition() : false
+const SPEECH_TIMEOUT = 2500
 
 export default {
   name: 'MainLayout',
@@ -117,7 +137,8 @@ export default {
   components: {
     EssentialLink,
     FooterLink,
-    VueTyper
+    VueTyper,
+    SineWave
   },
 
   data () {
@@ -125,6 +146,9 @@ export default {
       scrollPosition: 0,
       leftDrawerOpen: false,
       menuClicked: false,
+      isSpeechAvailable: false,
+      speaking: false,
+      currentCommand: '',
       roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager'],
       essentialLinks: [
         {
@@ -192,6 +216,89 @@ export default {
       this.leftDrawerOpen = !this.leftDrawerOpen
       this.menuClicked = true
       this.vibrate()
+    },
+    speech: function () {
+      recognition.lang = window.navigator.language
+      recognition.interimResults = true
+      this.speaking = true
+
+      recognition.addEventListener('speechend', event => {
+        setTimeout(() => { this.speaking = false }, SPEECH_TIMEOUT)
+      })
+
+      recognition.addEventListener('result', event => {
+        const text = Array.from(event.results).map(result => result[0]).map(result => result.transcript).join('')
+        this.currentCommand = text
+      })
+
+      recognition.addEventListener('end', () => {
+        setTimeout(() => {
+          const parseText = this.currentCommand
+          parseText && this.parseCommand(parseText)
+          this.currentCommand = ''
+        }, SPEECH_TIMEOUT)
+        recognition.stop()
+      })
+
+      recognition.start()
+    },
+    parseCommand: function (command) {
+      const commandMapper = {
+        home: ['home'],
+        about: ['about'],
+        skills: ['skills', 'know'],
+        experience: ['experience', 'profession', 'work'],
+        projects: ['projects', 'free', 'hobby'],
+        education: ['education', 'school', 'college', 'certificates', 'certificate'],
+        contact: ['contact', 'stay', 'connect', 'location'],
+        you: ['you', 'me', 'f***', 'sucks', 'idiot', 'stupid', 'dumb'],
+        linkedIn: ['linkedin'],
+        facebook: ['facebook'],
+        twitter: ['twitter'],
+        instagram: ['instagram'],
+        github: ['github']
+      }
+
+      const pathMapper = {
+        home: '/',
+        about: '/about',
+        skills: '/skills',
+        experience: '/experience',
+        projects: '/projects',
+        education: '/education',
+        you: '/you',
+        contact: '/contact'
+      }
+
+      const linkMapper = {
+        lindedIn: 'https://www.linkedin.com/in/jonafrank13',
+        facebook: 'https://www.facebook.com/jonafrank139',
+        twitter: 'https://twitter.com/knarfjona',
+        instagram: 'https://www.instagram.com/jonafrank139/',
+        github: 'https://github.com/jonafrank13'
+      }
+
+      let recongnizedCommand = ''
+      Object.entries(commandMapper).forEach(([key, commandKeyArray]) => {
+        if (commandKeyArray.some(v => command.toLowerCase().includes(v)) && !recongnizedCommand) {
+          recongnizedCommand = key
+        }
+      })
+
+      if (recongnizedCommand) {
+        if (pathMapper[recongnizedCommand]) {
+          this.$router.push(pathMapper[recongnizedCommand]).catch(err => {
+            console.warn(err)
+          })
+        } else if (linkMapper[recongnizedCommand]) {
+          location.href = linkMapper[recongnizedCommand]
+        }
+      } else {
+        this.$q.notify({
+          type: 'warning',
+          message: 'Sorry, I could\'nt understand your command'
+        })
+      }
     }
   },
 
@@ -200,6 +307,7 @@ export default {
       localStorage.setItem('dark', true)
     }
     this.$q.dark.set(localStorage.getItem('dark') === 'true')
+    this.isSpeechAvailable = !!recognition
   },
 
   mixins: [utils]
