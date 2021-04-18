@@ -113,6 +113,7 @@
           <q-card-section class="text-center text-bold text-italic text-secondary">
             <p>Try saying the section name like experience or about...</p>
             <p>or try saying github...</p>
+            <p>or try saying set to dark/light mode...</p>
           </q-card-section>
         </q-card>
       </q-dialog>
@@ -256,9 +257,9 @@ export default {
       const commandMapper = {
         home: ['home'],
         about: ['about'],
-        skills: ['skills', 'know'],
+        skills: ['skills', 'know', 'what'],
         experience: ['experience', 'profession', 'work'],
-        projects: ['projects', 'free', 'hobby'],
+        projects: ['projects', 'free', 'hobby', 'show'],
         education: ['education', 'school', 'college', 'certificates', 'certificate'],
         contact: ['contact', 'stay', 'connect', 'location'],
         you: ['you', 'me', 'f***', 'sucks', 'idiot', 'stupid', 'dumb'],
@@ -266,7 +267,11 @@ export default {
         facebook: ['facebook'],
         twitter: ['twitter'],
         instagram: ['instagram'],
-        github: ['github']
+        github: ['github'],
+        darkMode: ['dark'],
+        lightMode: ['light'],
+        fullScreenMode: ['full', 'screen'],
+        smallScreenMode: ['small', 'revert', 'resize']
       }
 
       const pathMapper = {
@@ -302,6 +307,22 @@ export default {
           })
         } else if (linkMapper[recongnizedCommand]) {
           location.href = linkMapper[recongnizedCommand]
+        } else if (recongnizedCommand === 'darkMode') {
+          this.$q.dark.set(true)
+        } else if (recongnizedCommand === 'lightMode') {
+          this.$q.dark.set(false)
+        } else if (recongnizedCommand === 'fullScreenMode') {
+          this.$q.fullscreen.request().then(() => {
+            console.info('fullscreen enabled')
+          }).catch(err => {
+            console.warn('error going fullscreen', err)
+          })
+        } else if (recongnizedCommand === 'smallScreenMode') {
+          this.$q.fullscreen.exit().then(() => {
+            console.info('fullscreen enabled')
+          }).catch(err => {
+            console.warn('error going fullscreen', err)
+          })
         }
       } else {
         this.$q.notify({
