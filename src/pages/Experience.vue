@@ -141,6 +141,31 @@
       <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
         <template v-slot:header>
           <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/hoote.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">Hoote</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Principal Architect (consultant)</q-item-label>
+            <q-item-label caption class="text-bold">Present</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li>I designed and developed the entire platform architecture for the application from scratch</li>
+              <li>Hands on and coded several modules</li>
+              <li>I lead a team of 3 to create the entire backend for the product</li>
+              <li>Used cutting edge technologies such as Dgraph (graph based database), MongoDB, Node.js, Fastify.js, AWS lambdas etc</li>
+              <li>Check it out at <a target="_blank" class="text-accent" href="https://hoote.com/">https://hoote.com/</a></li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
             <q-avatar icon="img:statics/icons/newton.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
           </q-item-section>
           <q-item-section>
@@ -156,6 +181,7 @@
               <li>I help conduct mock interviews for students</li>
               <li>I conduct interviews across the full stack covering both niche and generic topics like react, redux, node, javascript, datastructures, algorithms, design patterns, OOPS, web development, java, databases etc</li>
               <li>Covering levels from beginners to experts</li>
+              <li>Check it out at <a target="_blank" class="text-accent" href="https://www.newtonschool.co/">https://www.newtonschool.co/</a></li>
             </ul>
           </q-card-section>
         </q-card>

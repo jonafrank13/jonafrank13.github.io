@@ -423,6 +423,10 @@ export default {
             {
               name: 'Neo4j',
               value: 60
+            },
+            {
+              name: 'Dgraph',
+              value: 80
             }
           ]
         },
@@ -496,6 +500,10 @@ export default {
             },
             {
               name: 'AWS SQS',
+              value: 80
+            },
+            {
+              name: 'AWS Lambda',
               value: 80
             },
             {
