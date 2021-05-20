@@ -7,12 +7,12 @@
           Mobile
         </q-tooltip>
       </q-btn>
-      <q-btn round class="transparent q-mx-xs q-mb-xl items-end" type="a" href="mailto:jona.mailbox@gmail.com" target="_blank" flat icon="img:statics/icons/mail.png">
+      <q-btn round class="transparent q-mx-xs q-mb-xl items-end" type="a" href="mailto:jona.mailbox@gmail.com?subject=Hello Jona&body=Your website took me here!%0D%0DI would like to..." target="_blank" flat icon="img:statics/icons/mail.png">
         <q-tooltip anchor="top middle" self="bottom middle">
           E-Mail
         </q-tooltip>
       </q-btn>
-      <q-btn round class="transparent q-mx-md" type="a" href="https://api.whatsapp.com/send?phone=919445544689" target="_blank" flat icon="img:statics/icons/whatsapp.png">
+      <q-btn round class="transparent q-mx-md" type="a" href="https://api.whatsapp.com/send?phone=919445544689&text=Hello%20Jona" target="_blank" flat icon="img:statics/icons/whatsapp.png">
         <q-tooltip anchor="top middle" self="bottom middle">
           Whatsapp
         </q-tooltip>
