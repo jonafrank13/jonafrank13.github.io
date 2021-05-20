@@ -21,7 +21,7 @@
           <span>You seem to have arrived here from the website  📣 <i>{{userData.referrer}}</i>&nbsp;</span>
         </p>
         <p v-if="userData.clipboard">
-          <span>You seem to have the following content copied in your clipboard 📋 "<i>{{userData.clipboard}}</i>"&nbsp;</span>
+          <span>You seem to have the following content copied in your clipboard 📋 "<i class="ellipsis">{{userData.clipboard}}</i>"&nbsp;</span>
         </p>
         <p>Your browser / device is set to&nbsp;<i>{{userData.darkMode ? 'dark' : 'light'}}</i>&nbsp;{{userData.darkMode ? '🌚' : '🌞'}}&nbsp;mode</p>
       </template>
