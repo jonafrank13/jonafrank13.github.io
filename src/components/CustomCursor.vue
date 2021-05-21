@@ -97,14 +97,23 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   left: 0;
   width: 34px;
   height: 34px;
-  border: 1px solid #2f2f2f;
-  border-radius: 50%;
   transform: translate(-100%, -100%);
   transition: transform 0.5s $ease;
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: mould 2s linear infinite;
+}
+
+.custom-cursor__circle::before {
+  content: '';
+  width: 34px;
+  height: 34px;
+  border: 1px solid #2f2f2f;
+  border-radius: 50%;
+  border-color: inherit;
+  position: absolute;
+  animation: romould 2s linear infinite;
+  animation-direction: reverse;
 }
 
 .custom-cursor__circle::after {
@@ -129,44 +138,26 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   transition: transform 0.01s $ease;
 }
 
-@keyframes mould {
-  0% {
-    border-radius: 0;
-  }
-  25% {
-    border-radius: 25%;
-  }
-  50% {
-    border-radius: 50%;
-  }
-  75% {
-    border-radius: 25%;
-  }
-  100% {
-    border-radius: 0;
-  }
-}
-
 @keyframes romould {
   0% {
     border-radius: 0;
-    transform: rotate(0deg);
+    transform: rotate(0deg) scale(0.5);
   }
   25% {
     border-radius: 25%;
-    transform: rotate(72deg);
+    transform: rotate(72deg) scale(1.25);
   }
   50% {
     border-radius: 50%;
-    transform: rotate(144deg);
+    transform: rotate(144deg) scale(1.5);
   }
   75% {
     border-radius: 25%;
-    transform: rotate(216deg);
+    transform: rotate(216deg) scale(1.25);
   }
   100% {
     border-radius: 0;
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(0.5);
   }
 }
 </style>

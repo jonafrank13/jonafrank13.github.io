@@ -2,6 +2,7 @@
   <div id="q-app">
     <router-view />
     <custom-cursor
+    v-if="$q.platform.is.desktop"
     :targets="['img', 'a', 'button', 'i', 'svg']"
     :circleColor="'#5dc855'"
     :circleColorHover="'#fff'"
