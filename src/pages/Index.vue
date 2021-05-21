@@ -99,7 +99,7 @@ export default {
   },
   computed: {
     upiLink: function () {
-      return `upi://pay?pa=jona.mailbox@okhdfcbank&pn=jona%20frank&am=${this.amount}&tn=${this.note}&cu=INR&aid=uGICAgIC6seyTGA`
+      return `upi://pay?pa=jona.mailbox@okhdfcbank&pn=jona%20frank&am=${this.amount}&tn=${this.note}&cu=INR`
     }
   },
   mixins: [utils]
