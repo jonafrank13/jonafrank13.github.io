@@ -37,16 +37,22 @@
           <q-btn flat round dense icon="close" v-close-popup />
         </q-toolbar>
         <q-card-section>
-          <a :href="upiLink" target="_blank">
+          <p class="text-center text-accent">Click to open the link via an app</p>
+          <a title="Click to open the link via an app" :href="upiLink" target="_blank">
             <qr-code class="q-mx-auto row items-center content-center justify-center" color="#5dc855" bg-color="#1a2936" :text="upiLink"></qr-code>
           </a>
-          <a class="text-warning ellipsis q-my-md q-mx-auto" target="_blank" :style="{ maxWidth: '200px', display: 'block' }" :href="upiLink">{{upiLink}}</a>
+          <a class="text-warning ellipsis q-my-md q-mx-auto" target="_blank" title="Click to open the link via an app" :style="{ maxWidth: '200px', display: 'block' }" :href="upiLink">{{upiLink}}</a>
         </q-card-section>
         <q-card-section class="q-pt-none">
           <p class="text-center">Scan the QR code to pay via UPI (India Only)</p>
           <q-input rounded outlined v-model="amount" color="accent" mask="#.##" fill-mask="0" reverse-fill-mask prefix="₹">
             <template v-slot:append>
               <q-avatar text-color="white" icon="payment"></q-avatar>
+            </template>
+          </q-input>
+          <q-input class="q-mt-md" rounded outlined v-model="note" color="accent">
+            <template v-slot:append>
+              <q-avatar text-color="white" icon="notes"></q-avatar>
             </template>
           </q-input>
         </q-card-section>
@@ -68,7 +74,8 @@ export default {
       roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager', 'Perpetual Philomath'],
       navigator: window.navigator,
       payModel: false,
-      amount: '50.00'
+      amount: '50.00',
+      note: 'Enjoy your Coffee!'
     }
   },
   components: {
@@ -92,7 +99,7 @@ export default {
   },
   computed: {
     upiLink: function () {
-      return `upi://pay?pa=jona.mailbox@okhdfcbank&pn=jona%20frank&am=${this.amount}&cu=INR&aid=uGICAgIC6seyTGA`
+      return `upi://pay?pa=jona.mailbox@okhdfcbank&pn=jona%20frank&am=${this.amount}&tn=${this.note}&cu=INR&aid=uGICAgIC6seyTGA`
     }
   },
   mixins: [utils]
