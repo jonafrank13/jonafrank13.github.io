@@ -32,7 +32,7 @@
     <q-dialog v-model="payModel" persistent>
       <q-card style="min-width: 350px">
         <q-toolbar>
-          <q-avatar text-color="white" icon="emoji_food_beverage" />
+          <q-avatar :text-color="$q.dark.isActive ? 'white' : 'primary'" icon="emoji_food_beverage" />
           <q-toolbar-title>Buy me coffee!</q-toolbar-title>
           <q-btn flat round dense icon="close" v-close-popup />
         </q-toolbar>
