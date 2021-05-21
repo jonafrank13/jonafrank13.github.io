@@ -45,12 +45,12 @@
         </q-card-section>
         <q-card-section class="q-pt-none">
           <p class="text-center">Scan the QR code to pay via UPI (India Only)</p>
-          <q-input rounded outlined v-model="amount" color="accent" mask="#.##" fill-mask="0" reverse-fill-mask prefix="₹">
+          <q-input rounded outlined v-model="amount" debounce="500" color="accent" mask="#.##" fill-mask="0" reverse-fill-mask prefix="₹">
             <template v-slot:append>
               <q-avatar text-color="white" icon="payment"></q-avatar>
             </template>
           </q-input>
-          <q-input class="q-mt-md" rounded outlined v-model="note" color="accent">
+          <q-input class="q-mt-md" debounce="500" rounded outlined v-model="note" color="accent">
             <template v-slot:append>
               <q-avatar text-color="white" icon="notes"></q-avatar>
             </template>
