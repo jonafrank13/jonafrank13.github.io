@@ -19,23 +19,83 @@
       ></vue-typer>
     </h6>
     <footer-link />
+    <q-page-sticky position="bottom-right" :offset="[15, 15]">
+      <q-fab ripple color="secondary" padding="sm" icon="add_link" direction="left" @click="vibrate();">
+        <q-fab-action padding="sm" color="accent" @click="vibrate();buyMeCoffee();" icon="payments">
+          <q-tooltip>Buy me coffee</q-tooltip>
+        </q-fab-action>
+        <q-fab-action v-if="navigator.share" padding="sm" color="warning" @click="vibrate();sharePage()" icon="ios_share">
+          <q-tooltip>Share</q-tooltip>
+        </q-fab-action>
+      </q-fab>
+    </q-page-sticky>
+    <q-dialog v-model="payModel" persistent>
+      <q-card style="min-width: 350px">
+        <q-toolbar>
+          <q-avatar text-color="white" icon="emoji_food_beverage" />
+          <q-toolbar-title>Buy me coffee!</q-toolbar-title>
+          <q-btn flat round dense icon="close" v-close-popup />
+        </q-toolbar>
+        <q-card-section>
+          <a :href="upiLink" target="_blank">
+            <qr-code class="q-mx-auto row items-center content-center justify-center" color="#5dc855" bg-color="#1a2936" :text="upiLink"></qr-code>
+          </a>
+          <a class="text-warning ellipsis q-my-md q-mx-auto" target="_blank" :style="{ maxWidth: '200px', display: 'block' }" :href="upiLink">{{upiLink}}</a>
+        </q-card-section>
+        <q-card-section class="q-pt-none">
+          <p class="text-center">Scan the QR code to pay via UPI (India Only)</p>
+          <q-input rounded outlined v-model="amount" color="accent" mask="#.##" fill-mask="0" reverse-fill-mask prefix="₹">
+            <template v-slot:append>
+              <q-avatar text-color="white" icon="payment"></q-avatar>
+            </template>
+          </q-input>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 
 <script>
 import { VueTyper } from 'vue-typer'
+import { utils } from 'src/mixins/utils'
 import FooterLink from '../components/FooterLink'
+import VueQRCodeComponent from 'vue-qrcode-component'
+
 export default {
   name: 'PageIndex',
   data () {
     return {
-      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager', 'Perpetual Philomath']
+      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager', 'Perpetual Philomath'],
+      navigator: window.navigator,
+      payModel: false,
+      amount: '50.00'
     }
   },
   components: {
     VueTyper,
-    FooterLink
-  }
+    FooterLink,
+    'qr-code': VueQRCodeComponent
+  },
+  methods: {
+    sharePage: function () {
+      navigator.share({
+        title: 'Jona Frank',
+        text: 'Check out my portfolio',
+        url: 'https://jonafrank13.github.io/'
+      })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error))
+    },
+    buyMeCoffee: function () {
+      this.payModel = true
+    }
+  },
+  computed: {
+    upiLink: function () {
+      return `upi://pay?pa=jona.mailbox@okhdfcbank&pn=jona%20frank&am=${this.amount}&cu=INR&aid=uGICAgIC6seyTGA`
+    }
+  },
+  mixins: [utils]
 }
 </script>
 <style lang="scss" scoped>

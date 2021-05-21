@@ -17,6 +17,7 @@
     "device-detector-js": "^2.2.7",
     "quasar": "^1.0.0",
     "sine-waves": "^0.3.0",
+    "vue-qrcode-component": "^2.1.1",
     "vue-typer": "^1.2.0"
   },
   "devDependencies": {
