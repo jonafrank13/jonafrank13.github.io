@@ -3,6 +3,13 @@
 </template>
 
 <script>
+/**
+ * Due credit to https://github.com/sdras/three-vue-pattern
+ * @sdras
+ * https://sarah.dev
+ * original author : Sarah Drasner
+ * modified by : Jona Frank
+ */
 import * as SineWaves from 'sine-waves'
 export default {
   methods: {

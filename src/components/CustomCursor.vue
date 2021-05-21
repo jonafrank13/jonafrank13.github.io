@@ -14,6 +14,12 @@
 </template>
 
 <script>
+/**
+ * Due credit to https://github.com/hermanwikner/vue-custom-cursor
+ * @hermanwikner
+ * original author : Herman Wikner
+ * modified by : Jona Frank
+ */
 export default {
   name: 'CustomCursor',
   props: {
