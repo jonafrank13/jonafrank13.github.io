@@ -91,6 +91,7 @@ export default {
 
 <style lang="scss" scoped>
 $ease: cubic-bezier(0.23, 1, 0.32, 1);
+$radius: 34px;
 
 .custom-cursor {
   cursor: none;
@@ -101,8 +102,8 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   cursor: none;
   top: 0;
   left: 0;
-  width: 34px;
-  height: 34px;
+  width: $radius;
+  height: $radius;
   transform: translate(-100%, -100%);
   transition: transform 0.5s $ease;
   display: flex;
@@ -112,23 +113,24 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
 
 .custom-cursor__circle::before {
   content: '';
-  width: 34px;
-  height: 34px;
+  width: $radius;
+  height: $radius;
   border: 1px solid #2f2f2f;
   border-radius: 50%;
   border-color: inherit;
   position: absolute;
   animation: romould 2s linear infinite;
-  animation-direction: reverse;
 }
 
 .custom-cursor__circle::after {
   content: '';
-  width: 17px;
-  height: 17px;
+  width: $radius/1.5;
+  height: $radius/1.5;
   border: 1px solid #FB8C00;
   border-radius: 50%;
   animation: romould 2s linear infinite;
+  animation-direction: reverse;
+  animation-delay: 1s;
 }
 
 .custom-cursor__dot {
@@ -151,15 +153,15 @@ $ease: cubic-bezier(0.23, 1, 0.32, 1);
   }
   25% {
     border-radius: 25%;
-    transform: rotate(72deg) scale(1.25);
+    transform: rotate(72deg) scale(0.75);
   }
   50% {
     border-radius: 50%;
-    transform: rotate(144deg) scale(1.5);
+    transform: rotate(144deg) scale(1.25);
   }
   75% {
     border-radius: 25%;
-    transform: rotate(216deg) scale(1.25);
+    transform: rotate(216deg) scale(0.75);
   }
   100% {
     border-radius: 0;
