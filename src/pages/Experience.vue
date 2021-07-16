@@ -156,7 +156,10 @@
               <li>I designed and developed the entire platform architecture for the application from scratch</li>
               <li>Hands on and coded several modules</li>
               <li>I lead a team of 3 to create the entire backend for the product</li>
-              <li>Used cutting edge technologies such as Dgraph (graph based database), MongoDB, Node.js, Fastify.js, AWS lambdas etc</li>
+              <li>Used cutting edge technologies such as Dgraph (graph based database), MongoDB, Node.js, Fastify.js, AWS lambdas, Redis Caches,AWS SQS etc</li>
+              <li>Completely scaled the architecture to support upto a million MAU with exceptionally low latency, high QPS and availablity, cognizant to the costs involved</li>
+              <li>Took case of basic security of all apis exposed for the frontend (Supports iOS, Android and Web Apps)</li>
+              <li>Interfaced with the Product Managers and Frontend teams to release apis for v1.0 in just 5 months from scratch</li>
               <li>Check it out at <a target="_blank" class="text-accent" href="https://hoote.com/">https://hoote.com/</a></li>
             </ul>
           </q-card-section>
@@ -182,6 +185,30 @@
               <li>I conduct interviews across the full stack covering both niche and generic topics like react, redux, node, javascript, datastructures, algorithms, design patterns, OOPS, web development, java, databases etc</li>
               <li>Covering levels from beginners to experts</li>
               <li>Check it out at <a target="_blank" class="text-accent" href="https://www.newtonschool.co/">https://www.newtonschool.co/</a></li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/securra.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">Securra</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Technical Consultant</q-item-label>
+            <q-item-label caption class="text-bold">March - 2021</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li>Technical consultant for the securra health care application</li>
+              <li>Helped to resolve complex technical issues and solution new requirements</li>
+              <li>Came up with POCs for interfacing native Android and iOS applications with USB, NFC, Bluetooth and WiFi based medical devices</li>
+              <li>Check it out at <a target="_blank" class="text-accent" href="https://securra.com/">https://securra.com/</a></li>
             </ul>
           </q-card-section>
         </q-card>
