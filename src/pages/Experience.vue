@@ -157,7 +157,7 @@
               <li>Hands on and coded several modules</li>
               <li>I lead a team of 5 to create the entire backend for the product</li>
               <li>Used cutting edge technologies such as Dgraph (graph based database), Node.js, Fastify.js, AWS lambdas, Redis Caches,AWS SQS, AWS SNS, Gateways, Cloudwatch, S3 etc</li>
-              <li>Completely scaled the architecture to support upto 16 million WRITES per hour (5000 RPS) with exceptionally low latency (~100ms peak), high availablity, cognizant to the costs involved</li>
+              <li>Completely scaled the architecture to support upto 16 million WRITES per hour (5000 RPS) with exceptionally low latency (~100ms peak), high availablity cognizant to the costs involved</li>
               <li>Took case of basic security of all apis exposed for the frontend (Supports iOS, Android and Web Apps)</li>
               <li>Spear headed the testing efforts (performance [load, spike, soak, stress], vulnurability, penetration, unit and integration) using tools like k6, postman, newman, wireshark etc</li>
               <li>Interfaced with the Product Managers and Frontend teams to release apis for v1.0 in just 5 months from scratch</li>
