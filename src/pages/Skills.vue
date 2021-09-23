@@ -11,6 +11,7 @@
       <div class="text-warning" style="padding-top:14.5px">Graph</div>
       <q-toggle class="text-warning" :dark="$q.dark.isActive" color="accent" size="lg" label="List" @input="vibrate" v-model="is_list" />
     </div>
+    <div v-if="!is_list" class="q-mt-md full-width flex justify-center text-caption text-negative"><strong>Note:</strong>&nbsp;Rated out of 100%, based on my own self evaluation. Even if i know some topic very well, I believe there is always some scope to learn further, hence my max is at 99</div>
     <div v-for="segment in filtered_skills"  :key="segment.name">
       <h5 v-if="segment.skills.length > 0" class="full-width q-my-lg q-mt-xl text-center text-bold">{{segment.name}}</h5>
       <div v-if="segment.skills.length > 0" class="flex flex-wrap justify-center" :class="is_list ? 'column items-center' : ''">
@@ -47,31 +48,31 @@ export default {
           skills: [
             {
               name: 'Team Management',
-              value: 90
+              value: 99
             },
             {
               name: 'Hiring Process Management',
-              value: 90
+              value: 99
             },
             {
               name: 'Client Interaction / Requirement Gathering',
-              value: 90
+              value: 99
             },
             {
               name: 'Software Architecture',
-              value: 90
+              value: 99
             },
             {
               name: 'Product Management',
-              value: 80
+              value: 85
             },
             {
               name: 'Code Reviews',
-              value: 90
+              value: 99
             },
             {
               name: 'Continuous Feedback / Team Motivation',
-              value: 90
+              value: 99
             },
             {
               name: 'Budget Management',
@@ -79,7 +80,7 @@ export default {
             },
             {
               name: 'Project Proposals',
-              value: 90
+              value: 99
             },
             {
               name: 'Documentation / Content Writing',
@@ -87,7 +88,7 @@ export default {
             },
             {
               name: 'Process Improvement',
-              value: 90
+              value: 99
             },
             {
               name: 'SCRUM Process Management',
@@ -95,11 +96,11 @@ export default {
             },
             {
               name: 'Problem Solving / Debugging',
-              value: 90
+              value: 99
             },
             {
               name: 'Interpersonal Skills',
-              value: 90
+              value: 99
             }
           ]
         },
@@ -108,23 +109,23 @@ export default {
           skills: [
             {
               name: 'Javascript',
-              value: 90
+              value: 99
             },
             {
               name: 'Node.js',
-              value: 90
+              value: 99
             },
             {
               name: 'HTML',
-              value: 90
+              value: 99
             },
             {
               name: 'CSS',
-              value: 90
+              value: 99
             },
             {
               name: 'Java',
-              value: 80
+              value: 85
             },
             {
               name: 'Python',
@@ -145,27 +146,27 @@ export default {
           skills: [
             {
               name: 'Microservices',
-              value: 90
+              value: 99
             },
             {
               name: 'Service Oriented Architecture (SOA)',
-              value: 90
+              value: 99
             },
             {
               name: 'Monolitic Architecture',
-              value: 90
+              value: 99
             },
             {
               name: '3-Tier Architecture',
-              value: 90
+              value: 99
             },
             {
               name: 'N-Tier Architecture',
-              value: 90
+              value: 99
             },
             {
               name: 'Service Orchestration / Choreography',
-              value: 80
+              value: 85
             },
             {
               name: 'Cloud Architectures',
@@ -173,7 +174,7 @@ export default {
             },
             {
               name: 'Amazon Web Services (AWS)',
-              value: 80
+              value: 85
             },
             {
               name: 'Google Cloud Services (GCP)',
@@ -186,15 +187,15 @@ export default {
           skills: [
             {
               name: 'Vue',
-              value: 90
+              value: 99
             },
             {
               name: 'Angular 2+',
-              value: 90
+              value: 99
             },
             {
               name: 'React',
-              value: 90
+              value: 99
             },
             {
               name: 'Ember',
@@ -202,7 +203,7 @@ export default {
             },
             {
               name: 'jQuery',
-              value: 90
+              value: 99
             }
           ]
         },
@@ -211,15 +212,15 @@ export default {
           skills: [
             {
               name: 'Quasar',
-              value: 90
+              value: 99
             },
             {
               name: 'Ionic 2',
-              value: 90
+              value: 99
             },
             {
               name: 'Ionic 3',
-              value: 90
+              value: 99
             }
           ]
         },
@@ -232,7 +233,7 @@ export default {
             },
             {
               name: 'Webpack',
-              value: 90
+              value: 99
             },
             {
               name: 'Grunt',
@@ -245,15 +246,15 @@ export default {
           skills: [
             {
               name: 'SCSS',
-              value: 90
+              value: 99
             },
             {
               name: 'LESS',
-              value: 90
+              value: 99
             },
             {
               name: 'Stylus',
-              value: 90
+              value: 99
             }
           ]
         },
@@ -262,7 +263,7 @@ export default {
           skills: [
             {
               name: 'Mocha',
-              value: 80
+              value: 85
             },
             {
               name: 'Jasmine',
@@ -270,11 +271,19 @@ export default {
             },
             {
               name: 'Cypress',
-              value: 90
+              value: 99
+            },
+            {
+              name: 'Jest',
+              value: 99
+            },
+            {
+              name: 'React Testing Framework',
+              value: 99
             },
             {
               name: 'Puppeteer',
-              value: 90
+              value: 99
             }
           ]
         },
@@ -283,7 +292,7 @@ export default {
           skills: [
             {
               name: 'Typescript',
-              value: 90
+              value: 99
             },
             {
               name: 'D3',
@@ -299,71 +308,71 @@ export default {
             },
             {
               name: 'ES6',
-              value: 90
+              value: 99
             },
             {
               name: 'npm',
-              value: 90
+              value: 99
             },
             {
               name: 'Yarn',
-              value: 90
+              value: 99
             },
             {
               name: 'Bootstrap',
-              value: 90
+              value: 99
             },
             {
               name: 'CORS',
-              value: 90
+              value: 99
             },
             {
               name: 'CSRF',
-              value: 90
+              value: 99
             },
             {
               name: 'CSP',
-              value: 90
+              value: 99
             },
             {
               name: 'Progressive Web Apps (PWA)',
-              value: 90
+              value: 99
             },
             {
               name: 'Single Page Apps (SPA)',
-              value: 90
+              value: 99
             },
             {
               name: 'Server Side Rendering (SSR)',
-              value: 90
+              value: 99
             },
             {
               name: 'Flux',
-              value: 80
+              value: 85
             },
             {
               name: 'Redux',
-              value: 80
+              value: 85
             },
             {
               name: 'Vuex',
-              value: 80
+              value: 85
             },
             {
               name: 'Search Engine Optimization (SEO)',
-              value: 90
+              value: 99
             },
             {
               name: 'Chrome Extensions',
-              value: 90
+              value: 99
             },
             {
               name: 'Content Delivery Networks (CDNs)',
-              value: 90
+              value: 99
             },
             {
               name: 'Babel',
-              value: 90
+              value: 99
             },
             {
               name: 'GraphQL',
@@ -376,11 +385,11 @@ export default {
           skills: [
             {
               name: 'Express',
-              value: 80
+              value: 85
             },
             {
               name: 'Fastify',
-              value: 90
+              value: 99
             },
             {
               name: 'Helmet',
@@ -388,7 +397,7 @@ export default {
             },
             {
               name: 'Sequelize',
-              value: 80
+              value: 85
             }
           ]
         },
@@ -397,11 +406,11 @@ export default {
           skills: [
             {
               name: 'Postgres (PgSQL)',
-              value: 90
+              value: 99
             },
             {
               name: 'MySQL',
-              value: 80
+              value: 85
             }
           ]
         },
@@ -410,15 +419,15 @@ export default {
           skills: [
             {
               name: 'MongoDB',
-              value: 90
+              value: 99
             },
             {
               name: 'Firebase',
-              value: 80
+              value: 85
             },
             {
-              name: 'Redis',
-              value: 70
+              name: 'DynamoDB',
+              value: 85
             },
             {
               name: 'Neo4j',
@@ -426,7 +435,7 @@ export default {
             },
             {
               name: 'Dgraph',
-              value: 80
+              value: 99
             }
           ]
         },
@@ -435,7 +444,7 @@ export default {
           skills: [
             {
               name: 'VS Code',
-              value: 90
+              value: 99
             },
             {
               name: 'Atom',
@@ -443,19 +452,19 @@ export default {
             },
             {
               name: 'Sublime',
-              value: 90
+              value: 99
             },
             {
               name: 'Git',
-              value: 90
+              value: 99
             },
             {
               name: 'SVN',
-              value: 90
+              value: 99
             },
             {
               name: 'Docker',
-              value: 90
+              value: 99
             },
             {
               name: 'Kubernetes',
@@ -467,15 +476,15 @@ export default {
             },
             {
               name: 'Windows OS',
-              value: 90
+              value: 99
             },
             {
               name: 'Mac OS',
-              value: 90
+              value: 99
             },
             {
               name: 'Linux',
-              value: 90
+              value: 99
             }
           ]
         },
@@ -492,7 +501,11 @@ export default {
             },
             {
               name: 'OAuth',
-              value: 90
+              value: 99
+            },
+            {
+              name: 'Redis',
+              value: 99
             },
             {
               name: 'Kafka',
@@ -500,11 +513,11 @@ export default {
             },
             {
               name: 'AWS SQS',
-              value: 80
+              value: 85
             },
             {
               name: 'AWS Lambda',
-              value: 80
+              value: 85
             },
             {
               name: 'J2EE',
@@ -524,19 +537,19 @@ export default {
             },
             {
               name: 'UX / UI',
-              value: 90
+              value: 99
             },
             {
               name: 'Algorithms',
-              value: 90
+              value: 99
             },
             {
               name: 'Datastructures',
-              value: 90
+              value: 99
             },
             {
               name: 'Design Patterns',
-              value: 90
+              value: 99
             },
             {
               name: 'Data Science / Data Analytics',
@@ -548,11 +561,11 @@ export default {
             },
             {
               name: 'Microsoft Office (Excel, PPT, Word)',
-              value: 90
+              value: 99
             },
             {
               name: 'Arduino / Raspberry Pi',
-              value: 90
+              value: 99
             }
           ]
         },
@@ -561,11 +574,11 @@ export default {
           skills: [
             {
               name: 'Cooking / Baking',
-              value: 90
+              value: 99
             },
             {
               name: 'Painting / Sketching',
-              value: 90
+              value: 99
             },
             {
               name: 'Singing',
@@ -573,11 +586,11 @@ export default {
             },
             {
               name: 'Oratory',
-              value: 90
+              value: 99
             },
             {
               name: 'Quizzing',
-              value: 80
+              value: 85
             }
           ]
         }
