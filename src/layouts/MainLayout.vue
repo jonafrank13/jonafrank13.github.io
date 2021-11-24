@@ -150,7 +150,7 @@ export default {
       isSpeechAvailable: false,
       speaking: false,
       currentCommand: '',
-      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager'],
+      roles: ['Software Engineer', 'Software Consultant', 'Software Architect', 'Javascript Ninja', 'Technical Product Manager', 'Perpetual Philomath'],
       essentialLinks: [
         {
           title: 'Home',
@@ -178,7 +178,7 @@ export default {
         },
         {
           title: 'Projects',
-          caption: 'Some cool projects I have worked on',
+          caption: 'Some cool side projects I have worked on',
           icon: 'assignment',
           link: '/projects'
         },

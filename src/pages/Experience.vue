@@ -4,12 +4,41 @@
       <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
         <template v-slot:header>
           <q-item-section avatar>
+            <q-avatar icon="img:statics/icons/coinbase.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label class="text-warning text-bold text-h5">Coinbase</q-item-label>
+            <q-item-label class="text-bold text-accent text-h6">Senior Software Engineer (IC level 5)</q-item-label>
+            <q-item-label caption class="text-bold">Nov 2021 to present</q-item-label>
+          </q-item-section>
+        </template>
+        <q-separator :dark="$q.dark.isActive" />
+        <q-card>
+          <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
+            <ul>
+              <li>Building the future of finance and working towards enabling economic freedom for all</li>
+              <li>Leading, Architecting &amp; Building scalable products for coinbase</li>
+              <li>Articulating a long term technical direction and vision for maintaining and scaling the web and mobile platforms.</li>
+              <li>Creating trustworthy user experiences by building interfaces that are simple, easy to comprehend, performant and reliable using modern tools like React, React Native, Typescript, React Navigation, Jest and Webpack.</li>
+              <li>Turning the company vision into a tangible roadmap every quarter by working with engineers, product managers and senior leadership.</li>
+              <li>Mentoring and training other team members on design techniques and coding standards.</li>
+              <li>Adding positive energy in every meeting, and making my coworkers feel included in every interaction.</li>
+              <li>Implementing current trends and best practices in front-end/back-end architecture, including performance, security and usability.</li>
+              <li>Writing high quality, well tested code to meet the needs of our customers.</li>
+            </ul>
+          </q-card-section>
+        </q-card>
+      </q-expansion-item>
+      <q-separator spaced :dark="$q.dark.isActive" />
+      <q-expansion-item header-class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <template v-slot:header>
+          <q-item-section avatar>
             <q-avatar icon="img:statics/icons/paypal.png" size="100px" :color="$q.dark.isActive ? 'primary' : ''" text-color="white" />
           </q-item-section>
           <q-item-section>
             <q-item-label class="text-warning text-bold text-h5">PayPal</q-item-label>
             <q-item-label class="text-bold text-accent text-h6">Senior Technologist (Software Engineering &amp; Architecture)</q-item-label>
-            <q-item-label caption class="text-bold">Aug 2020 to present</q-item-label>
+            <q-item-label caption class="text-bold">Aug 2020 to Nov 2021 (1 year 3 months)</q-item-label>
           </q-item-section>
         </template>
         <q-separator :dark="$q.dark.isActive" />
@@ -19,6 +48,7 @@
               <li>Architecting, Leading &amp; Building full stack applications and services that are highly distributed &amp; scalable. Handling millions of transactions and billions of requests per day!</li>
               <li>Maintaining &amp; developing global fraud, risks &amp; disputes platform applications</li>
               <li>Hands on coding with Node, React, Typescript, GraphQL and Java (APIs)</li>
+              <li>Second highest code contributor (in terms of both commits and code) to the resolutioncenter application since its inception (which started in 2013 prior to my joining)</li>
               <li>Striving towards achieving level 3 of API maturity model for all APIs under the org</li>
               <li>Guiding and supporting the team with better coding practices, code efficiency, code reviews, bringing in usage of bleeding edge methodologies, technologies and tech stacks, unblocking them for critical tasks and boosting the morale of the team</li>
               <li>Designing new workflow requirements at both high (system) level and low (api, classes) level</li>
@@ -153,14 +183,16 @@
         <q-card>
           <q-card-section :class="$q.dark.isActive ? 'bg-primary' : 'text-primary'">
             <ul>
-              <li>I designed and developed the entire platform architecture for the application from scratch</li>
-              <li>Hands on and coded several modules</li>
-              <li>I lead a team of 5 to create the entire backend for the product</li>
+              <li>I designed and developed the entire platform architecture for the application from scratch (intial version)</li>
+              <li>Hands on and coded several modules and microservices</li>
+              <li>I lead a team of 5 to create the entire backend for the product (initial version)</li>
+              <li>Developed and wrote frontend code for the associated/complimentary content management applications and the admin applications (production version)</li>
               <li>Used cutting edge technologies such as Dgraph (graph based database), Node.js, Fastify.js, AWS lambdas, Redis Caches,AWS SQS, AWS SNS, Gateways, Cloudwatch, S3 etc</li>
-              <li>Completely scaled the architecture to support upto 16 million WRITES per hour (5000 RPS) with exceptionally low latency (~100ms peak), high availablity cognizant to the costs involved</li>
+              <li>Completely scaled the architecture with the team to support upto 16 million WRITES per hour (5000 RPS) with exceptionally low latency (~100ms peak), high availablity cognizant to the costs involved</li>
               <li>Took case of basic security of all apis exposed for the frontend (Supports iOS, Android and Web Apps)</li>
               <li>Spear headed the testing efforts (performance [load, spike, soak, stress], vulnurability, penetration, unit and integration) using tools like k6, postman, newman, wireshark etc</li>
               <li>Interfaced with the Product Managers and Frontend teams to release apis for v1.0 in just 5 months from scratch</li>
+              <li>Worked with super talented folks and learned a lot</li>
               <li>Check it out at <a target="_blank" class="text-accent" href="https://hoote.com/">https://hoote.com/</a></li>
             </ul>
           </q-card-section>
@@ -307,6 +339,10 @@ ul {
   li:last-of-type {
     border-bottom: none;
   }
+}
+/deep/ .list-item {
+  border: 1px solid;
+  border-radius: 6px;
 }
 @media only screen and (max-width: 768px) {
   /deep/ .list-item {

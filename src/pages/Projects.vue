@@ -1,18 +1,18 @@
 <template>
   <q-page class="flex projects-page">
     <div class="q-pa-xl row items-start justify-md-between justify-center q-gutter-md">
-      <q-card class="project-card" :class="$q.dark.isActive ? 'bg-primary' : ''" :dark="false" v-for="project in projects" :key="project.name" flat bordered>
+      <q-card class="project-card" :class="$q.dark.isActive ? 'bg-primary' : 'bd-light'" :dark="false" v-for="project in projects" :key="project.name" flat bordered>
         <q-img
           width="298px"
           height="160px"
           :src="project.img"
         />
-        <q-card-section>
+        <q-card-section class="project-card-box">
           <div class="text-warning">{{project.date}}</div>
           <div class="text-h5 q-mt-sm q-mb-xs text-accent">{{project.name}}</div>
           <div class="text-caption text-grey">{{project.desc}}</div>
         </q-card-section>
-        <q-card-actions class="absolute-bottom">
+        <q-card-actions class="absolute-bottom project-card-bottom">
           <q-btn flat :color="$q.dark.isActive ? 'white' : 'black'" type="a" :href="project.link" target="_blank" icon="link" label="View Project" />
         </q-card-actions>
       </q-card>
@@ -29,7 +29,7 @@ export default {
         {
           name: 'this.',
           date: 'April 2020',
-          desc: 'Designed and developed my personal portfolio website',
+          desc: 'Designed the UI/UX and developed my personal portfolio website',
           link: 'https://jonafrank13.github.io/',
           img: '/statics/website.png'
         },
@@ -99,5 +99,14 @@ export default {
   min-height: 400px;
   max-width: 300px;
   position: relative;
+  border: 1px solid white;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.project-card-box, .project-card-bottom {
+  border-top: 1px solid;
+}
+.bd-light {
+  border-color: $border;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <q-page class="flex edu-page q-py-md q-px-xl">
     <q-list class="full-width">
-      <q-item-label header class="text-h3 text-warning text-center q-my-lg"
+      <q-item-label header class="text-h3 text-warning text-center q-my-lg sticky-title edu-title" :class="$q.dark.isActive ? 'bg-primary' : 'bg-white'"
         >Education</q-item-label
       >
       <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
@@ -29,7 +29,7 @@
             :class="$q.dark.isActive ? 'text-white' : 'text-primary'"
             caption
             >Head of Robotics, Mathematics, English and Quiz Club. Merit
-            Scholarship winner</q-item-label
+            scholarship winner</q-item-label
           >
           <q-item-label
             :class="$q.dark.isActive ? 'text-white' : 'text-primary'"
@@ -92,7 +92,7 @@
           >
         </q-item-section>
       </q-item>
-      <q-item-label header class="text-h3 text-warning text-center q-my-lg"
+      <q-item-label header class="text-h3 text-warning text-center q-my-lg sticky-title edu-title" :class="$q.dark.isActive ? 'bg-primary' : 'bg-white'"
         >Certifications</q-item-label
       >
       <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
@@ -314,7 +314,7 @@
           </q-item-section>
         </q-item>
       </template>
-      <q-item-label header class="text-h3 text-warning text-center q-my-lg"
+      <q-item-label header class="text-h3 text-warning text-center q-my-lg sticky-title edu-title" :class="$q.dark.isActive ? 'bg-primary' : 'bg-white'"
         >Honors &amp; Awards</q-item-label
       >
       <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
@@ -427,6 +427,42 @@ export default {
   data () {
     return {
       linkedInCerts: [
+        {
+          name: 'Blockchain Basics',
+          issued: 'Sep 2021',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Beyond the Basics',
+          issued: 'Sep 2021',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'Ethereum: Building Blockchain Decentralized Apps (DApps)',
+          issued: 'Sep 2021',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'React: Components, Context, and Accessibility',
+          issued: 'Sep 2021',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'React: Software Architecture',
+          issued: 'Aug 2021',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
+        {
+          name: 'React: State Management',
+          issued: 'Aug 2021',
+          icon: 'img:statics/icons/linkedin.png',
+          authority: 'LinkedIn'
+        },
         {
           name: 'GraphQL with React: The Complete Developers Guide',
           issued: 'Oct 2020',
@@ -694,6 +730,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.list-item, .edu-title {
+  border: 1px solid;
+  border-radius: 6px;
+}
 @media only screen and (max-width: 768px) {
   .list-item {
     flex-direction: column;

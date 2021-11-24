@@ -2,7 +2,7 @@
   <q-page class="flex content-center flex-center contact-page q-py-md q-px-xl">
     <div class="content text-center" :class="$q.dark.isActive ? 'bg-primary' : ''">
       <h4 class="full-width text-accent text-bold q-mt-sm q-mb-lg">About You</h4>
-      <template v-if="userData.region">
+      <template v-if="!error && userData.region">
         <p>Hi visitor, You seem to be accessing my website from the ip address 📡 <i>{{userData.ip}}</i>, your internet service provider is <i>{{userData.org}}</i></p>
         <p>I see that you are using a <i>{{userData.device.brand}}&nbsp;{{userData.device.type}}</i>&nbsp;💻&nbsp;specifically a <i>{{userData.client.name}}</i> browser 🌐 , which is on version 🚥<i>{{userData.client.version}}</i></p>
         <p>Your OS 💿 seems to be <i>{{userData.os.name}}</i>, which is on version 🚥<i>{{userData.os.version}}</i>&nbsp;<span v-if="userData.memory">having at least <i>{{userData.memory}} GB</i> of RAM</span></p>
@@ -23,8 +23,12 @@
         <p v-if="userData.clipboard">
           <span>You seem to have the following content copied in your clipboard 📋 "<i class="ellipsis">{{userData.clipboard}}</i>"&nbsp;</span>
         </p>
+        <p>
+          <span>You seem to have accessed the website in <i class="ellipsis">{{userData.incognito ? 'incognito' : 'non incognito'}} </i>mode&nbsp;</span>
+        </p>
         <p>Your browser / device is set to&nbsp;<i>{{userData.darkMode ? 'dark' : 'light'}}</i>&nbsp;{{userData.darkMode ? '🌚' : '🌞'}}&nbsp;mode</p>
       </template>
+      <p v-else-if="error">Seems like your browser is highly restrictive!</p>
       <q-spinner-ball v-else color="secondary" size="10em" />
     </div>
   </q-page>
@@ -37,7 +41,8 @@ export default {
   name: 'You',
   data () {
     return {
-      userData: {}
+      userData: {},
+      error: false
     }
   },
   mounted: function () {
@@ -61,7 +66,22 @@ export default {
       navigator.clipboard.readText().then(txt => {
         this.$set(this.userData, 'clipboard', txt)
       })
+    }).catch((e) => {
+      this.error = true
+      console.error('Seems like ajax requests are blocked')
     })
+
+    const fs = window.RequestFileSystem || window.webkitRequestFileSystem
+    if (fs) {
+      fs(window.TEMPORARY, 100, (fs) => {
+        this.$set(this.userData, 'incognito', false)
+      }, (err) => {
+        console.info(err)
+        this.$set(this.userData, 'incognito', true)
+      })
+    } else {
+      this.$set(this.userData, 'incognito', true)
+    }
   },
   methods: {
     handleOrientation: function (event) {
@@ -89,14 +109,21 @@ export default {
 </script>
 <style lang="scss" scoped>
 .content {
+  border: 1px solid;
   border-radius: 10px;
   padding: 15px;
   color: $warning;
   font-weight: bold;
   font-size: 14px;
+  min-height: 450px;
+  min-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   i {
     color: $secondary;
     font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 </style>

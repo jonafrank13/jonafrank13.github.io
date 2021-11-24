@@ -16,13 +16,14 @@
       <br>
       &#9673; <i class="text-left" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">Talent without tenacity is like a seed without water.</i><br>
       &#9673; <i class="text-left" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">You are always one decision away from a completely different life.</i><br>
-      &#9673; <i class="text-left" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">You must learn from the mistakes of others. You will never live long enough to make them all yourself.</i>
+      &#9673; <i class="text-left" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">You must learn from the mistakes of others. You will never live long enough to make them all yourself.</i><br>
+      &#9673; <i class="text-left" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">Jack of all trades, master of none, though oftentimes better than master of one.</i>
       <marquee class="q-my-lg text-bold"><h5>Travel 🛫 Eat 🍜 Serve 🙏🏻 Learn 📚 Laugh 😆 Love 🥰 Lose Control 🤪 Have Fun 🥳 Smartly 🤓 & Wisely 😎</h5></marquee>
       </div>
       <span v-else>
         <br>
         <br>
-        <div class="text-left">Summary of his technical acumen & experience (in his own words)</div>
+        <div class="text-left text-accent">Summary of his technical acumen & experience (in his own words)</div>
         <br>
         <ul class="text-left tech-list" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">
           <li>Highly trained with expertise and deep knowledge in all things javascript , node , frontend , middleware, frontend Architecture and web development &lt;foraying into micro frontend architectures, IOTs and chatbots (Dialogflow)&gt;</li>
@@ -36,6 +37,7 @@
           <li>Expert problem solving, workaround development, communication & presentation skills</li>
           <li>Fully self sufficient and capable of shipping an application from scratch as an Individual Contributor (IC) as well as leading a team to achieve the same end goals, my career path has helped me achieve this dual proficiency</li>
           <li>Proven legacy in people management skills, with excellent feedback from the people I have worked with and lead, A strong proponent of the servant leadership & tribe leadership philosophies</li>
+          <li>Currently exploring and working with web-3.0 tech, DApps, De-Fi, Solidity, DDbs, IPFS, IPNS, Smart Contracts etc</li>
           <li>My Career trajectory is focused on becoming a technical product manager/engineering manager &lt;basically looking for the ability to own product / features&gt; in the short term and eventually a CTO in the long term</li>
         </ul>
       </span>
@@ -62,8 +64,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .content {
+  border: 1px solid;
   border-radius: 10px;
-  padding: 15px;
+  padding: 25px;
   color: $warning;
   font-weight: bold;
   font-size: 14px;

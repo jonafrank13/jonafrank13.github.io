@@ -71,7 +71,7 @@ export default {
   name: 'PageIndex',
   data () {
     return {
-      roles: ['Principal Software Engineer', 'Javascript Ninja', 'Technical Software Architect', 'Technical Product Manager', 'Perpetual Philomath'],
+      roles: ['Software Engineer', 'Software Consultant', 'Software Architect', 'Javascript Ninja', 'Technical Product Manager', 'Perpetual Philomath'],
       navigator: window.navigator,
       payModel: false,
       amount: '50.00',
@@ -105,7 +105,7 @@ export default {
   mounted: function () {
     window.onload = () => {
       console.log('%c Jona Frank', 'font-weight: bold; font-size: 50px;color: red; text-shadow: 3px 3px 0 rgb(217,31,38) , 6px 6px 0 rgb(226,91,14) , 9px 9px 0 rgb(245,221,8) , 12px 12px 0 rgb(5,148,68) , 15px 15px 0 rgb(2,135,206) , 18px 18px 0 rgb(4,77,145) , 21px 21px 0 rgb(42,21,113)')
-      console.log('%c Nice to see such an inquisitive fellow! If you liked what you see, give me a shoutout on linkedIn, Link is in my website :)', 'color: red; font-family:monospace; font-size: 20px')
+      console.log('%c Nice to see such an inquisitive person! If you liked what you see, give me a shoutout on linkedIn, Link is in my website :)', 'color: red; font-family:monospace; font-size: 20px')
       console.log('%c If you plan to copy this, please do give due credits, jona.mailbox@gmail.com', 'color: orange; font-family:monospace; font-size: 16px')
 
       const title = document.title

@@ -13,9 +13,9 @@
     </div>
     <div v-if="!is_list" class="q-mt-md full-width flex justify-center text-caption text-negative"><strong>Note:</strong>&nbsp;Rated out of 100%, based on my own self evaluation. Even if i know some topic very well, I believe there is always some scope to learn further, hence my max is at 99</div>
     <div v-for="segment in filtered_skills"  :key="segment.name">
-      <h5 v-if="segment.skills.length > 0" class="full-width q-my-lg q-mt-xl text-center text-bold">{{segment.name}}</h5>
-      <div v-if="segment.skills.length > 0" class="flex flex-wrap justify-center" :class="is_list ? 'column items-center' : ''">
-        <div v-for="skill in segment.skills" class="flex-wrap justify-start items-center" :class="is_list ? 'justify-center q-my-sm' : 'column'" :key="skill.name">
+      <h5 v-if="segment.skills.length > 0" class="full-width q-my-lg q-mt-xl text-center text-bold sticky-title" :class="$q.dark.isActive ? 'bg-background' : 'bg-white'">{{segment.name}}</h5>
+      <transition-group v-if="segment.skills.length > 0" tag="div" class="flex flex-wrap justify-center" :class="is_list ? 'column items-center' : ''" appear enter-active-class="animated bounceIn" leave-active-class="animated bounceOut">
+        <div v-for="skill in segment.skills" class="flex-wrap justify-start items-center skill-item" :class="is_list ? 'justify-center q-my-sm' : 'add-border column'" :key="skill.name">
           <q-circular-progress
             v-if="!is_list"
             show-value
@@ -28,9 +28,9 @@
             :track-color="$q.dark.isActive ? 'primary' : 'white'"
           >
           </q-circular-progress>
-          <div class="text-bold text-warning text-center" style="max-width: 110px; text-wrap: wrap;">{{skill.name}}</div>
+          <div class="text-bold text-warning text-center skill-text" :class="is_list ? 'add-border' : ''">{{skill.name}}</div>
         </div>
-      </div>
+      </transition-group>
     </div>
   </q-page>
 </template>
@@ -112,15 +112,15 @@ export default {
               value: 99
             },
             {
-              name: 'Node.js',
+              name: 'Node.js (js runtime...duh!)',
               value: 99
             },
             {
-              name: 'HTML',
+              name: 'HTML 5(markup language)',
               value: 99
             },
             {
-              name: 'CSS',
+              name: 'CSS (scripting language)',
               value: 99
             },
             {
@@ -133,7 +133,7 @@ export default {
             },
             {
               name: 'Go',
-              value: 20
+              value: 50
             },
             {
               name: 'C#',
@@ -190,7 +190,7 @@ export default {
               value: 99
             },
             {
-              name: 'Angular 2+',
+              name: 'Angular >=2+',
               value: 99
             },
             {
@@ -198,12 +198,12 @@ export default {
               value: 99
             },
             {
-              name: 'Ember',
-              value: 40
-            },
-            {
               name: 'jQuery',
               value: 99
+            },
+            {
+              name: 'Ember',
+              value: 40
             }
           ]
         },
@@ -228,12 +228,12 @@ export default {
           name: 'Frontend Bundlers',
           skills: [
             {
-              name: 'Gulp',
-              value: 60
-            },
-            {
               name: 'Webpack',
               value: 99
+            },
+            {
+              name: 'Gulp',
+              value: 60
             },
             {
               name: 'Grunt',
@@ -262,14 +262,6 @@ export default {
           name: 'Frontend Testing Frameworks',
           skills: [
             {
-              name: 'Mocha',
-              value: 85
-            },
-            {
-              name: 'Jasmine',
-              value: 60
-            },
-            {
               name: 'Cypress',
               value: 99
             },
@@ -284,6 +276,14 @@ export default {
             {
               name: 'Puppeteer',
               value: 99
+            },
+            {
+              name: 'Mocha',
+              value: 85
+            },
+            {
+              name: 'Jasmine',
+              value: 60
             }
           ]
         },
@@ -376,7 +376,48 @@ export default {
             },
             {
               name: 'GraphQL',
+              value: 99
+            }
+          ]
+        },
+        {
+          name: 'Blockchain Technologies',
+          skills: [
+            {
+              name: 'Blockchain Fundamentals',
+              value: 99
+            },
+            {
+              name: 'Etherium blockchain',
               value: 60
+            },
+            {
+              name: 'Solidity',
+              value: 20
+            },
+            {
+              name: 'dApp',
+              value: 70
+            },
+            {
+              name: 'dDb',
+              value: 40
+            },
+            {
+              name: 'IPFS',
+              value: 70
+            },
+            {
+              name: 'IPNS',
+              value: 70
+            },
+            {
+              name: 'DeFi / Smart Contracts / DAO',
+              value: 50
+            },
+            {
+              name: 'Web 3.0',
+              value: 50
             }
           ]
         },
@@ -422,6 +463,10 @@ export default {
               value: 99
             },
             {
+              name: 'Dgraph',
+              value: 99
+            },
+            {
               name: 'Firebase',
               value: 85
             },
@@ -432,10 +477,6 @@ export default {
             {
               name: 'Neo4j',
               value: 60
-            },
-            {
-              name: 'Dgraph',
-              value: 99
             }
           ]
         },
@@ -516,7 +557,27 @@ export default {
               value: 85
             },
             {
+              name: 'AWS SNS',
+              value: 85
+            },
+            {
+              name: 'AWS Gateways',
+              value: 85
+            },
+            {
               name: 'AWS Lambda',
+              value: 85
+            },
+            {
+              name: 'AWS S3',
+              value: 85
+            },
+            {
+              name: 'AWS Cloudwatch',
+              value: 85
+            },
+            {
+              name: 'AWS Xray',
               value: 85
             },
             {
@@ -581,16 +642,20 @@ export default {
               value: 99
             },
             {
-              name: 'Singing',
-              value: 70
-            },
-            {
               name: 'Oratory',
               value: 99
             },
             {
               name: 'Quizzing',
+              value: 90
+            },
+            {
+              name: 'Badminton',
               value: 85
+            },
+            {
+              name: 'Singing (Choir Singer)',
+              value: 70
             }
           ]
         }
@@ -623,5 +688,20 @@ export default {
 h5 {
   color: $accent !important;
   text-decoration: underline;
+  padding: 20px;
+  top: 50px;
+}
+.skill-item {
+  border-radius: 15px;
+  padding: 5px;
+  margin: 5px;
+}
+.skill-text {
+  max-width: 110px;
+  border-radius: 15px;
+  padding: 5px;
+}
+.add-border {
+  border: 1px solid;
 }
 </style>
