@@ -327,6 +327,63 @@
         </q-item-section>
         <q-item-section>
           <q-item-label class="text-accent text-h4"
+            >Star award</q-item-label
+          >
+          <q-item-label class="text-secondary text-h6">Coinbase</q-item-label>
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label class="text-warning" caption>2022</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-separator dark spaced inset />
+      <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <q-item-section avatar>
+          <q-icon
+            :color="$q.dark.isActive ? 'white' : 'primary'"
+            size="100px"
+            name="stars"
+          />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label class="text-accent text-h4"
+            >APAC People's Choice Award - Smart Contract Hackathon - 2022</q-item-label
+          >
+          <q-item-label class="text-secondary text-h6">Coinbase</q-item-label>
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label class="text-warning" caption>2022</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-separator dark spaced inset />
+       <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <q-item-section avatar>
+          <q-icon
+            :color="$q.dark.isActive ? 'white' : 'primary'"
+            size="100px"
+            name="stars"
+          />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label class="text-accent text-h4"
+            >Spot Award</q-item-label
+          >
+          <q-item-label class="text-secondary text-h6">PayPal</q-item-label>
+        </q-item-section>
+        <q-item-section side top>
+          <q-item-label class="text-warning" caption>2021</q-item-label>
+        </q-item-section>
+      </q-item>
+      <q-separator dark spaced inset />
+      <q-item class="list-item" :class="$q.dark.isActive ? 'bg-primary' : ''">
+        <q-item-section avatar>
+          <q-icon
+            :color="$q.dark.isActive ? 'white' : 'primary'"
+            size="100px"
+            name="stars"
+          />
+        </q-item-section>
+        <q-item-section>
+          <q-item-label class="text-accent text-h4"
             >Heros of 2020</q-item-label
           >
           <q-item-label class="text-secondary text-h6">PayPal</q-item-label>
