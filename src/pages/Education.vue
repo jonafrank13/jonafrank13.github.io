@@ -327,7 +327,7 @@
         </q-item-section>
         <q-item-section>
           <q-item-label class="text-accent text-h4"
-            >Star award</q-item-label
+            >Star award 2022</q-item-label
           >
           <q-item-label class="text-secondary text-h6">Coinbase</q-item-label>
         </q-item-section>
@@ -365,7 +365,7 @@
         </q-item-section>
         <q-item-section>
           <q-item-label class="text-accent text-h4"
-            >Spot Award</q-item-label
+            >Spot Award 2021</q-item-label
           >
           <q-item-label class="text-secondary text-h6">PayPal</q-item-label>
         </q-item-section>
