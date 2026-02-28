@@ -4,7 +4,7 @@
       v-model="leftDrawerOpen"
       :width="280"
       :breakpoint="500"
-      :content-class="$q.dark.isActive ? 'flex column bg-primary' : 'flex column'"
+      :class="$q.dark.isActive ? 'flex row bg-primary' : 'flex row'"
     >
       <q-list style="flex: 1 1 auto; overflow-y: auto; -webkit-overflow-scrolling: touch;">
         <q-item-label
@@ -58,7 +58,7 @@
       <div class="full-width flex column justify-end">
         <footer-link />
         <!-- DO NOT REMOVE THIS LINE -->
-        <div style="border-top: 0.5px solid white" class="text-center text-caption text-weight-thin">Made by - <a class="text-warning" href="https://jonafrank13.github.io/">Jona Frank</a> - 2021</div>
+        <div style="border-top: 0.5px solid white" class="text-center text-caption text-weight-thin">Made by - <a class="text-warning" href="https://jonafrank13.github.io/">Jona Frank</a> - Feb 2026</div>
         <!-- DO NOT REMOVE THIS LINE -->
       </div>
     </q-drawer>
@@ -99,7 +99,7 @@
       </transition>
       <q-page-sticky v-if="isSpeechAvailable" position="bottom-left" :offset="[15, 15]">
         <q-btn fab-mini ripple icon="mic" class="animated infinite slow" :class="speaking ? 'heartBeat' : ''" @click="speech();vibrate();" color="accent">
-           <q-tooltip content-class="bg-secondary">Speak!</q-tooltip>
+           <q-tooltip class="bg-secondary">Speak!</q-tooltip>
         </q-btn>
       </q-page-sticky>
       <q-dialog v-model="speaking">
