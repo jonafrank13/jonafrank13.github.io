@@ -77,6 +77,109 @@
         <p v-if="userData.weather">
           The current weather 🌤️ near your location is <i>{{userData.weather.temperature}}°C</i> with <i>{{userData.weather.description}}</i> and wind speed of <i>{{userData.weather.windspeed}} km/h</i> 💨
         </p>
+
+        <!-- DEVICE ENUMERATION -->
+        <div v-if="userData.usbDevices !== undefined || userData.bluetoothAvailable !== undefined || userData.midiInputs !== undefined || userData.mediaDevices !== undefined" class="q-mt-md">
+          <h6 class="text-accent text-bold q-mb-sm q-mt-none">🔌 Connected Devices</h6>
+
+          <!-- USB Devices -->
+          <template v-if="userData.usbDevices !== undefined">
+            <p v-if="userData.usbDevices === null">
+              Your browser does not support the <i>WebUSB API</i> 🔌
+            </p>
+            <p v-else-if="userData.usbDevices.length === 0">
+              No previously paired <i>USB devices</i> 🔌 were found (you may need to pair a device first via the browser prompt)
+            </p>
+            <div v-else>
+              <p>You have <i>{{userData.usbDevices.length}}</i> paired USB device{{userData.usbDevices.length !== 1 ? 's' : ''}} 🔌:</p>
+              <ul class="text-left q-ml-lg">
+                <li v-for="(dev, i) in userData.usbDevices" :key="'usb-' + i">
+                  <i>{{dev.productName || 'Unknown Device'}}</i>
+                  <span v-if="dev.manufacturerName"> by <i>{{dev.manufacturerName}}</i></span>
+                  <span class="text-grey-6"> (VID: {{dev.vendorId?.toString(16).toUpperCase().padStart(4,'0')}}, PID: {{dev.productId?.toString(16).toUpperCase().padStart(4,'0')}})</span>
+                </li>
+              </ul>
+            </div>
+          </template>
+
+          <!-- Bluetooth -->
+          <p v-if="userData.bluetoothAvailable === false">
+            Your browser does not support the <i>Web Bluetooth API</i> 📶
+          </p>
+          <p v-else-if="userData.bluetoothAvailable === true">
+            Your browser supports the <i>Web Bluetooth API</i> 📶 — Bluetooth is available on this device
+          </p>
+
+          <!-- MIDI Devices -->
+          <template v-if="userData.midiInputs !== undefined">
+            <p v-if="userData.midiInputs === null">
+              Your browser does not support the <i>Web MIDI API</i> 🎹
+            </p>
+            <p v-else-if="userData.midiInputs.length === 0 && userData.midiOutputs.length === 0">
+              No <i>MIDI devices</i> 🎹 are currently connected
+            </p>
+            <div v-else>
+              <p v-if="userData.midiInputs.length > 0">
+                You have <i>{{userData.midiInputs.length}}</i> MIDI input{{userData.midiInputs.length !== 1 ? 's' : ''}} 🎹:
+              </p>
+              <ul v-if="userData.midiInputs.length > 0" class="text-left q-ml-lg">
+                <li v-for="(dev, i) in userData.midiInputs" :key="'midi-in-' + i">
+                  <i>{{dev.name || 'Unknown MIDI Input'}}</i>
+                  <span v-if="dev.manufacturer"> by <i>{{dev.manufacturer}}</i></span>
+                </li>
+              </ul>
+              <p v-if="userData.midiOutputs && userData.midiOutputs.length > 0">
+                You have <i>{{userData.midiOutputs.length}}</i> MIDI output{{userData.midiOutputs.length !== 1 ? 's' : ''}} 🎵:
+              </p>
+              <ul v-if="userData.midiOutputs && userData.midiOutputs.length > 0" class="text-left q-ml-lg">
+                <li v-for="(dev, i) in userData.midiOutputs" :key="'midi-out-' + i">
+                  <i>{{dev.name || 'Unknown MIDI Output'}}</i>
+                  <span v-if="dev.manufacturer"> by <i>{{dev.manufacturer}}</i></span>
+                </li>
+              </ul>
+            </div>
+          </template>
+
+          <!-- Media Devices (cameras, microphones, speakers) -->
+          <template v-if="userData.mediaDevices !== undefined">
+            <p v-if="userData.mediaDevices === null">
+              Your browser does not support the <i>MediaDevices API</i> 📷
+            </p>
+            <p v-else-if="userData.mediaDevices.length === 0">
+              No <i>media devices</i> 📷 were enumerated (permission may be required)
+            </p>
+            <div v-else>
+              <p>Your browser can see <i>{{userData.mediaDevices.length}}</i> media device{{userData.mediaDevices.length !== 1 ? 's' : ''}} 📷🎙️🔊:</p>
+              <ol class="text-center inline-block">
+                <li v-for="(dev, i) in userData.mediaDevices" :key="'media-' + i">
+                  <i>{{dev.label || (dev.kind === 'videoinput' ? 'Camera' : dev.kind === 'audioinput' ? 'Microphone' : 'Speaker')}}</i>
+                  <span class="text-grey-6">
+                    &nbsp;({{dev.kind === 'videoinput' ? '📷 Camera' : dev.kind === 'audioinput' ? '🎙️ Microphone' : '🔊 Speaker'}})
+                  </span>
+                </li>
+              </ol>
+            </div>
+          </template>
+
+          <!-- Gamepads -->
+          <template v-if="userData.gamepads !== undefined">
+            <p v-if="userData.gamepads === null">
+              Your browser does not support the <i>Gamepad API</i> 🎮
+            </p>
+            <p v-else-if="userData.gamepads.length === 0">
+              No <i>gamepads</i> 🎮 are currently connected
+            </p>
+            <div v-else>
+              <p>You have <i>{{userData.gamepads.length}}</i> gamepad{{userData.gamepads.length !== 1 ? 's' : ''}} 🎮 connected:</p>
+              <ul class="text-left q-ml-lg">
+                <li v-for="(gp, i) in userData.gamepads" :key="'gp-' + i">
+                  <i>{{gp.id || 'Unknown Gamepad'}}</i>
+                  <span class="text-grey-6"> — {{gp.buttons}} buttons, {{gp.axes}} axes</span>
+                </li>
+              </ul>
+            </div>
+          </template>
+        </div>
       </template>
       <p v-else-if="error">Seems like your browser is highly restrictive!</p>
       <q-spinner-ball v-else color="secondary" size="10em" />
@@ -296,6 +399,100 @@ export default defineComponent({
         })
       } else {
         userData.incognito = true
+      }
+
+      // --- Device Enumeration APIs ---
+
+      // 1. WebUSB — enumerate previously granted/paired USB devices
+      if (navigator.usb) {
+        navigator.usb.getDevices().then(devices => {
+          userData.usbDevices = devices.map(d => ({
+            productName: d.productName,
+            manufacturerName: d.manufacturerName,
+            vendorId: d.vendorId,
+            productId: d.productId
+          }))
+        }).catch(() => {
+          userData.usbDevices = []
+        })
+      } else {
+        userData.usbDevices = null
+      }
+
+      // 2. Web Bluetooth — check availability (cannot enumerate without user gesture)
+      if (navigator.bluetooth) {
+        navigator.bluetooth.getAvailability().then(available => {
+          userData.bluetoothAvailable = available
+        }).catch(() => {
+          userData.bluetoothAvailable = false
+        })
+      } else {
+        userData.bluetoothAvailable = false
+      }
+
+      // 3. Web MIDI — enumerate MIDI inputs and outputs
+      if (navigator.requestMIDIAccess) {
+        navigator.requestMIDIAccess().then(midiAccess => {
+          const inputs = []
+          midiAccess.inputs.forEach(input => {
+            inputs.push({ name: input.name, manufacturer: input.manufacturer })
+          })
+          const outputs = []
+          midiAccess.outputs.forEach(output => {
+            outputs.push({ name: output.name, manufacturer: output.manufacturer })
+          })
+          userData.midiInputs = inputs
+          userData.midiOutputs = outputs
+        }).catch(() => {
+          userData.midiInputs = []
+          userData.midiOutputs = []
+        })
+      } else {
+        userData.midiInputs = null
+        userData.midiOutputs = null
+      }
+
+      // 4. MediaDevices — enumerate cameras, microphones, speakers
+      if (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
+        navigator.mediaDevices.enumerateDevices().then(devices => {
+          userData.mediaDevices = devices.map(d => ({
+            kind: d.kind,
+            label: d.label || null
+          }))
+        }).catch(() => {
+          userData.mediaDevices = []
+        })
+      } else {
+        userData.mediaDevices = null
+      }
+
+      // 5. Gamepad API — enumerate connected gamepads
+      if ('getGamepads' in navigator) {
+        const rawGamepads = Array.from(navigator.getGamepads()).filter(Boolean)
+        userData.gamepads = rawGamepads.map(gp => ({
+          id: gp.id,
+          buttons: gp.buttons.length,
+          axes: gp.axes.length
+        }))
+        // Also listen for gamepad connect/disconnect events
+        window.addEventListener('gamepadconnected', () => {
+          const updated = Array.from(navigator.getGamepads()).filter(Boolean)
+          userData.gamepads = updated.map(gp => ({
+            id: gp.id,
+            buttons: gp.buttons.length,
+            axes: gp.axes.length
+          }))
+        })
+        window.addEventListener('gamepaddisconnected', () => {
+          const updated = Array.from(navigator.getGamepads()).filter(Boolean)
+          userData.gamepads = updated.map(gp => ({
+            id: gp.id,
+            buttons: gp.buttons.length,
+            axes: gp.axes.length
+          }))
+        })
+      } else {
+        userData.gamepads = null
       }
     })
 
