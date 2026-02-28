@@ -9,7 +9,7 @@
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
-    "build": "del-cli ./css ./fonts ./img ./js *.png *.jpg ./index.html && quasar build && mv dist/spa/* . && del-cli ./dist"
+    "build": "del-cli ./css ./fonts ./img ./js *.png *.jpg ./icons/* ./index.html && quasar build && mv dist/spa/* . && del-cli ./dist"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.0",
