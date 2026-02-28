@@ -126,6 +126,7 @@ import { utils } from 'src/mixins/utils'
 import SineWave from 'components/SineWave.vue'
 import FooterLink from 'components/FooterLink.vue'
 import EssentialLink from 'components/EssentialLink.vue'
+import { getCurrentInstance } from 'vue'
 
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
 const recognition = SpeechRecognition ? new SpeechRecognition() : false
@@ -154,6 +155,8 @@ export default defineComponent({
     const speaking = ref(false)
     const currentCommand = ref('')
 
+    const instance = getCurrentInstance();
+
     const roles = ['Software Engineer', 'Software Consultant', 'Software Architect', 'Javascript Ninja', 'Technical Product Manager', 'Perpetual Philomath']
 
     const essentialLinks = [
@@ -177,6 +180,7 @@ export default defineComponent({
     }
 
     function handleMenuClick () {
+      instance.proxy.vibrate()
       leftDrawerOpen.value = !leftDrawerOpen.value
       menuClicked.value = true
     }
