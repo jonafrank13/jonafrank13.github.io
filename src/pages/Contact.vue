@@ -1,21 +1,14 @@
 <template>
   <q-page class="flex content-center flex-center contact-page q-py-md q-px-xl">
-    <!-- <h4 class="full-width text-secondary text-center text-bold q-mb-sm">Contact</h4> -->
     <div class="full-width flex justify-center items-end">
-      <q-btn round class="transparent q-mx-md" type="a" href="tel:+91-9445544689" target="_blank" flat icon="img:statics/icons/call.png">
-        <q-tooltip anchor="top middle" self="bottom middle">
-          Mobile
-        </q-tooltip>
+      <q-btn round class="transparent q-mx-md" type="a" href="tel:+91-9445544689" target="_blank" flat icon="img:/icons/call.png">
+        <q-tooltip anchor="top middle" self="bottom middle">Mobile</q-tooltip>
       </q-btn>
-      <q-btn round class="transparent q-mx-xs q-mb-xl items-end" type="a" href="mailto:jona.mailbox@gmail.com?subject=Hello Jona&body=Your website took me here!%0D%0DI would like to..." target="_blank" flat icon="img:statics/icons/mail.png">
-        <q-tooltip anchor="top middle" self="bottom middle">
-          E-Mail
-        </q-tooltip>
+      <q-btn round class="transparent q-mx-xs q-mb-xl items-end" type="a" href="mailto:jona.mailbox@gmail.com?subject=Hello Jona&body=Your website took me here!%0D%0DI would like to..." target="_blank" flat icon="img:/icons/mail.png">
+        <q-tooltip anchor="top middle" self="bottom middle">E-Mail</q-tooltip>
       </q-btn>
-      <q-btn round class="transparent q-mx-md" type="a" href="https://api.whatsapp.com/send?phone=919445544689&text=Hello%20Jona" target="_blank" flat icon="img:statics/icons/whatsapp.png">
-        <q-tooltip anchor="top middle" self="bottom middle">
-          Whatsapp
-        </q-tooltip>
+      <q-btn round class="transparent q-mx-md" type="a" href="https://api.whatsapp.com/send?phone=919445544689&text=Hello%20Jona" target="_blank" flat icon="img:/icons/whatsapp.png">
+        <q-tooltip anchor="top middle" self="bottom middle">Whatsapp</q-tooltip>
       </q-btn>
     </div>
     <footer-link />
@@ -25,11 +18,13 @@
 </template>
 
 <script>
-import FooterLink from '../components/FooterLink'
-export default {
+import { defineComponent } from 'vue'
+import FooterLink from 'components/FooterLink.vue'
+
+export default defineComponent({
   name: 'Contact',
   components: {
     FooterLink
   }
-}
+})
 </script>

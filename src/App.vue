@@ -1,31 +1,29 @@
 <template>
-  <div id="q-app">
-    <router-view />
-    <custom-cursor
+  <router-view />
+  <custom-cursor
     v-if="$q.platform.is.desktop"
     :targets="['img', 'a', 'button', 'i', 'svg']"
-    :circleColor="'#5dc855'"
-    :circleColorHover="'#fff'"
-    :dotColor="'#ed3833'"
-    :dotColorHover="'#5dc855'"
-    :hoverSize="1.8"
-  ></custom-cursor>
-  </div>
+    :circle-color="'#5dc855'"
+    :circle-color-hover="'#fff'"
+    :dot-color="'#ed3833'"
+    :dot-color-hover="'#5dc855'"
+    :hover-size="1.8"
+  />
 </template>
 
 <script>
-import Vue from 'vue'
-import CustomCursor from 'components/CustomCursor'
+import { defineComponent } from 'vue'
+import CustomCursor from 'components/CustomCursor.vue'
 
-Vue.prototype.windowObj = window
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     CustomCursor
   }
-}
+})
 </script>
+
 <style>
-#q-app { cursor: none }
+body { cursor: none }
 aside { cursor: auto }
 </style>

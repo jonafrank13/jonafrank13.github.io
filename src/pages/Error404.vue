@@ -20,10 +20,11 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import { utils } from 'src/mixins/utils'
 
-export default {
+export default defineComponent({
   name: 'Error404',
   mixins: [utils]
-}
+})
 </script>

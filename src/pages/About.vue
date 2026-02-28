@@ -18,12 +18,12 @@
       &#9673; <i class="text-left" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">You are always one decision away from a completely different life.</i><br>
       &#9673; <i class="text-left" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">You must learn from the mistakes of others. You will never live long enough to make them all yourself.</i><br>
       &#9673; <i class="text-left" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">Jack of all trades, master of none, though oftentimes better than master of one.</i>
-      <marquee class="q-my-lg text-bold"><h5>Travel 🛫 Eat 🍜 Serve 🙏🏻 Learn 📚 Laugh 😆 Love 🥰 Lose Control 🤪 Have Fun 🥳 Smartly 🤓 & Wisely 😎</h5></marquee>
+      <marquee class="q-my-lg text-bold"><h5>Travel 🛫 Eat 🍜 Serve 🙏🏻 Learn 📚 Laugh 😆 Love 🥰 Lose Control 🤪 Have Fun 🥳 Smartly 🤓 &amp; Wisely 😎</h5></marquee>
       </div>
       <span v-else>
         <br>
         <br>
-        <div class="text-left text-accent">Summary of his technical acumen & experience (in his own words)</div>
+        <div class="text-left text-accent">Summary of his technical acumen &amp; experience (in his own words)</div>
         <br>
         <ul class="text-left tech-list" :class="$q.dark.isActive ? 'text-white' : 'text-primary'">
           <li>Highly trained with expertise and deep knowledge in all things javascript , node , frontend , middleware, frontend Architecture and web development &lt;foraying into micro frontend architectures, IOTs and chatbots (Dialogflow)&gt;</li>
@@ -31,12 +31,12 @@
           <li>Architected and Solutioned multiple highly available, resilient, fault tolerant products and applications with architectural components such as load balancers, caches (Redis), CDNs (Cloudflare), Queues (SQS, Kafka, Rabbit MQ), Databases (Postgres, Firebase, MongoDB) and micro services</li>
           <li>Developed, Architected and shipped couple of apps with service orchestration / service choreography based microservice backends / middleware that scales elastically</li>
           <li>Worked with both micro services and monolithic (Enterprise) architectures with basic knowledge in scaling systems vertically and horizontally, developed products in Cloud Native architectures, n-tire web applications, batch systems, message / event driven systems, IAM, OAuth 2.0 solutions etc</li>
-          <li>Experience in setting up high velocity runway for applications with continuous delivery model & SOPs using project management models such as Agile, Scrum, XP and Waterfall</li>
+          <li>Experience in setting up high velocity runway for applications with continuous delivery model &amp; SOPs using project management models such as Agile, Scrum, XP and Waterfall</li>
           <li>Worked with AWS products such as EC2, VPC, SQS, Load Balancer etc for deploying solutions on the Cloud</li>
           <li>Working with startups gave me the opportunity to wear multiple hats and take up/gain experience in Product Management and Software Architect roles as well, personally I prefer the frontend architecture and development work as I can visibly see my work on screen and I have polished my skills to get pixel perfect UI and UX for users</li>
-          <li>Expert problem solving, workaround development, communication & presentation skills</li>
+          <li>Expert problem solving, workaround development, communication &amp; presentation skills</li>
           <li>Fully self sufficient and capable of shipping an application from scratch as an Individual Contributor (IC) as well as leading a team to achieve the same end goals, my career path has helped me achieve this dual proficiency</li>
-          <li>Proven legacy in people management skills, with excellent feedback from the people I have worked with and lead, A strong proponent of the servant leadership & tribe leadership philosophies</li>
+          <li>Proven legacy in people management skills, with excellent feedback from the people I have worked with and lead, A strong proponent of the servant leadership &amp; tribe leadership philosophies</li>
           <li>Currently exploring and working with web-3.0 tech, DApps, De-Fi, Solidity, DDbs, IPFS, IPNS, Smart Contracts etc</li>
           <li>My Career trajectory is focused on becoming a technical product manager/engineering manager &lt;basically looking for the ability to own product / features&gt; in the short term and eventually a CTO in the long term</li>
         </ul>
@@ -44,24 +44,27 @@
     </div>
     <div class="q-my-md full-width flex justify-center">
       <div class="text-warning" style="padding-top:14.5px">Professional</div>
-      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="secondary" size="lg" label="Personal" @input="vibrate" v-model="is_personal" />
+      <q-toggle class="text-warning" :dark="$q.dark.isActive" color="secondary" size="lg" label="Personal" @update:model-value="vibrate" v-model="is_personal" />
     </div>
   </q-page>
 </template>
 
 <script>
+import { defineComponent, ref } from 'vue'
 import { utils } from 'src/mixins/utils'
 
-export default {
+export default defineComponent({
   name: 'About',
-  data () {
-    return {
-      is_personal: false
-    }
-  },
-  mixins: [utils]
-}
+
+  mixins: [utils],
+
+  setup () {
+    const is_personal = ref(false)
+    return { is_personal }
+  }
+})
 </script>
+
 <style lang="scss" scoped>
 .content {
   border: 1px solid;

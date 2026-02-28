@@ -8,10 +8,7 @@
     class="q-py-md"
     @click="vibrate"
   >
-    <q-item-section
-      v-if="icon"
-      avatar
-    >
+    <q-item-section v-if="icon" avatar>
       <q-icon :name="icon" color="warning" />
     </q-item-section>
     <q-item-section>
@@ -24,36 +21,38 @@
 </template>
 
 <script>
+import { defineComponent } from 'vue'
 import { utils } from 'src/mixins/utils'
 
-export default {
+export default defineComponent({
   name: 'EssentialLink',
+
+  mixins: [utils],
+
   props: {
     title: {
       type: String,
       required: true
     },
-
     caption: {
       type: String,
       default: ''
     },
-
     link: {
       type: String,
       default: '#'
     },
-
     icon: {
       type: String,
       default: ''
     }
-  },
-  mixins: [utils]
-}
+  }
+})
 </script>
-<style lang="stylus" scoped>
-.highlight
-  background rgba($primary, 0.2)
-  pointer-events none
+
+<style lang="scss" scoped>
+.highlight {
+  background: rgba($primary, 0.2);
+  pointer-events: none;
+}
 </style>

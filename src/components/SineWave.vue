@@ -10,54 +10,29 @@
  * original author : Sarah Drasner
  * modified by : Jona Frank
  */
+import { defineComponent, ref, onMounted } from 'vue'
 import * as SineWaves from 'sine-waves'
-export default {
-  methods: {
-    waves () {
-      const waves = new SineWaves({
-        el: this.$refs.waves,
+
+export default defineComponent({
+  name: 'SineWave',
+
+  setup () {
+    const waves = ref(null)
+
+    function initWaves () {
+      new SineWaves({
+        el: waves.value,
         speed: 20,
         ease: 'SineInOut',
         wavesWidth: '50%',
         waves: [
-          {
-            timeModifier: 3,
-            lineWidth: 2,
-            amplitude: -75,
-            wavelength: 25
-          },
-          {
-            timeModifier: 2,
-            lineWidth: 2,
-            amplitude: -50,
-            wavelength: 30
-          },
-          {
-            timeModifier: 1,
-            lineWidth: 2,
-            amplitude: -30,
-            wavelength: 30
-          },
-          {
-            timeModifier: 3,
-            lineWidth: 1,
-            amplitude: 40,
-            wavelength: 40
-          },
-          {
-            timeModifier: 0.5,
-            lineWidth: 1,
-            amplitude: -60,
-            wavelength: 60
-          },
-          {
-            timeModifier: 1.3,
-            lineWidth: 1,
-            amplitude: -40,
-            wavelength: 40
-          }
+          { timeModifier: 3, lineWidth: 2, amplitude: -75, wavelength: 25 },
+          { timeModifier: 2, lineWidth: 2, amplitude: -50, wavelength: 30 },
+          { timeModifier: 1, lineWidth: 2, amplitude: -30, wavelength: 30 },
+          { timeModifier: 3, lineWidth: 1, amplitude: 40, wavelength: 40 },
+          { timeModifier: 0.5, lineWidth: 1, amplitude: -60, wavelength: 60 },
+          { timeModifier: 1.3, lineWidth: 1, amplitude: -40, wavelength: 40 }
         ],
-        // Called on window resize
         resizeEvent: function () {
           var gradient = this.ctx.createLinearGradient(0, 0, this.width, 0)
           gradient.addColorStop(0, 'rgba(25, 255, 255, 0)')
@@ -68,19 +43,20 @@ export default {
           while (++index < length) {
             this.waves[index].strokeStyle = gradient
           }
-          // Clean Up
           index = undefined
           length = undefined
           gradient = undefined
         }
       })
-      return waves
     }
-  },
-  mounted () {
-    this.waves()
+
+    onMounted(() => {
+      initWaves()
+    })
+
+    return { waves }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>

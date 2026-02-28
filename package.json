@@ -3,45 +3,43 @@
   "version": "0.0.1",
   "description": "Personal Website of Jona Frank (jona.mailbox@gmail.com)",
   "productName": "Jona Frank",
-  "cordovaId": "org.cordova.quasar.app",
-  "capacitorId": "",
   "author": "Jona Frank<jona.mailbox@gmail.com>",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0",
-    "build": "del-cli ./css ./fonts ./img ./js ./statics ./index.html;quasar build;mv dist/spa/* .;del-cli ./dist;"
+    "dev": "quasar dev",
+    "build": "del-cli ./css ./fonts ./img ./js *.png *.jpg ./index.html && quasar build && mv dist/spa/* . && del-cli ./dist"
   },
   "dependencies": {
-    "@quasar/extras": "^1.0.0",
-    "device-detector-js": "^2.2.7",
-    "quasar": "^1.0.0",
+    "@quasar/extras": "^1.16.0",
+    "device-detector-js": "^3.0.3",
+    "quasar": "^2.14.0",
     "sine-waves": "^0.3.0",
-    "vue-qrcode-component": "^2.1.1",
-    "vue-typer": "^1.2.0"
+    "vue": "^3.3.0",
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
-    "@quasar/app": "^1.0.0",
-    "babel-eslint": "^10.0.1",
-    "del-cli": "^3.0.1",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-loader": "^3.0.3",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^6.1.2"
+    "@quasar/app-webpack": "^3.11.0",
+    "@babel/core": "^7.0.0",
+    "@babel/eslint-parser": "^7.0.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-vue": "^9.0.0"
   },
   "engines": {
-    "node": ">= 10.18.1",
+    "node": "^20 || ^18 || ^16",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
   },
   "browserslist": [
-    "last 1 version, not dead, ie >= 11"
-  ],
-  "resolutions": {
-    "@babel/parser": "7.7.5"
-  }
+    "last 2 Chrome versions",
+    "last 2 Firefox versions",
+    "last 2 Safari versions",
+    "last 2 Edge versions"
+  ]
 }

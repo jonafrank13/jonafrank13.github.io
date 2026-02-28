@@ -20,8 +20,11 @@
  * original author : Herman Wikner
  * modified by : Jona Frank
  */
-export default {
+import { defineComponent, ref, onMounted, onBeforeUnmount } from 'vue'
+
+export default defineComponent({
   name: 'CustomCursor',
+
   props: {
     targets: Array,
     circleColor: String,
@@ -30,63 +33,65 @@ export default {
     dotColorHover: String,
     hoverSize: Number
   },
-  data () {
-    return {
-      scale: 1,
-      x: null,
-      y: null,
-      circlePosX: null,
-      circlePosY: null,
-      dotPosX: null,
-      dotPosY: null,
-      circleStyle: null,
-      dotStyle: null
-    }
-  },
-  methods: {
-    customCursor (e) {
-      // cursor pos
-      this.x = e.clientX
-      this.y = e.clientY
 
-      // cursor circle
-      const circle = this.$refs.customCursorCircle
+  setup (props) {
+    const customCursorCircle = ref(null)
+    const customCursorDot = ref(null)
+    const circleStyle = ref(null)
+    const dotStyle = ref(null)
+    let scale = 1
+
+    function customCursor (e) {
+      const x = e.clientX
+      const y = e.clientY
+
+      const circle = customCursorCircle.value
+      const dot = customCursorDot.value
+
       if (circle) {
-        this.circlePosX = this.x - circle.clientWidth / 2
-        this.circlePosY = this.y - circle.clientWidth / 2
+        const circlePosX = x - circle.clientWidth / 2
+        const circlePosY = y - circle.clientWidth / 2
+
+        if (
+          (props.targets.length > 0 &&
+            props.targets.includes(e.target.tagName?.toLowerCase?.())) ||
+          props.targets.includes(e.target.className?.toLowerCase?.())
+        ) {
+          scale = props.hoverSize
+          circleStyle.value = { borderColor: props.circleColorHover }
+          dotStyle.value = { backgroundColor: props.dotColorHover }
+        } else {
+          scale = 1
+          circleStyle.value = { borderColor: props.circleColor }
+          dotStyle.value = { backgroundColor: props.dotColor }
+        }
+
+        circle.style.transform = `translate(${circlePosX}px,${circlePosY}px) scale(${scale})`
       }
 
-      // cursor circle
-      const dot = this.$refs.customCursorDot
       if (dot) {
-        this.dotPosX = this.x - dot.clientWidth / 2
-        this.dotPosY = this.y - dot.clientHeight / 2
+        const dotPosX = x - dot.clientWidth / 2
+        const dotPosY = y - dot.clientHeight / 2
+        dot.style.transform = `translate(${dotPosX}px,${dotPosY}px)`
       }
-
-      // change style when hovering on selected targets
-      if (
-        (this.targets.length > 0 &&
-          this.targets.includes(e.target.tagName?.toLowerCase?.())) ||
-        this.targets.includes(e.target.className?.toLowerCase?.())
-      ) {
-        this.scale = this.hoverSize
-        this.circleStyle = { borderColor: this.circleColorHover }
-        this.dotStyle = { backgroundColor: this.dotColorHover }
-      } else {
-        this.scale = 1
-        this.circleStyle = { borderColor: this.circleColor }
-        this.dotStyle = { backgroundColor: this.dotColor }
-      }
-
-      // move custom cursor
-      circle.style.transform = `translate(${this.circlePosX}px,${this.circlePosY}px) scale(${this.scale})`
-      dot.style.transform = `translate(${this.dotPosX}px,${this.dotPosY}px)`
     }
-  },
-  mounted () {
-    window.addEventListener('mousemove', this.customCursor)
+
+    onMounted(() => {
+      window.addEventListener('mousemove', customCursor)
+    })
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('mousemove', customCursor)
+    })
+
+    return {
+      customCursorCircle,
+      customCursorDot,
+      circleStyle,
+      dotStyle
+    }
   }
-}
+})
 </script>
 
 <style lang="scss" scoped>
@@ -124,8 +129,8 @@ $radius: 34px;
 
 .custom-cursor__circle::after {
   content: '';
-  width: $radius/1.5;
-  height: $radius/1.5;
+  width: calc(#{$radius} / 1.5);
+  height: calc(#{$radius} / 1.5);
   border: 1px solid #FB8C00;
   border-radius: 50%;
   animation: romould 2s linear infinite;
@@ -147,25 +152,10 @@ $radius: 34px;
 }
 
 @keyframes romould {
-  0% {
-    border-radius: 0;
-    transform: rotate(0deg) scale(0.5);
-  }
-  25% {
-    border-radius: 25%;
-    transform: rotate(72deg) scale(0.75);
-  }
-  50% {
-    border-radius: 50%;
-    transform: rotate(144deg) scale(1.25);
-  }
-  75% {
-    border-radius: 25%;
-    transform: rotate(216deg) scale(0.75);
-  }
-  100% {
-    border-radius: 0;
-    transform: rotate(360deg) scale(0.5);
-  }
+  0% { border-radius: 0; transform: rotate(0deg) scale(0.5); }
+  25% { border-radius: 25%; transform: rotate(72deg) scale(0.75); }
+  50% { border-radius: 50%; transform: rotate(144deg) scale(1.25); }
+  75% { border-radius: 25%; transform: rotate(216deg) scale(0.75); }
+  100% { border-radius: 0; transform: rotate(360deg) scale(0.5); }
 }
 </style>
