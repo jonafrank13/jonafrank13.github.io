@@ -52,7 +52,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .highlight {
-  background: rgba($primary, 0.2);
+  background: rgba($secondary, 0.4);
   pointer-events: none;
 }
 </style>
